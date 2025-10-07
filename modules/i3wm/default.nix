@@ -1,7 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 05c057b (A stable config)
   imports = [
     ./picom.nix
   ];
@@ -24,9 +27,12 @@
         xclip
         maim
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 0e212d2 (Add security modules)
+=======
+>>>>>>> 05c057b (A stable config)
       ];
     };
   };
@@ -51,11 +57,16 @@
     thunar-archive-plugin
     thunar-volman
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     xfce4-terminal
     ristretto
 >>>>>>> 0e212d2 (Add security modules)
+=======
+    xfce4-terminal
+    ristretto
+>>>>>>> 05c057b (A stable config)
   ];
 
   environment.etc."X11/xinit/xinitrc".text = builtins.readFile ./xinitrc;

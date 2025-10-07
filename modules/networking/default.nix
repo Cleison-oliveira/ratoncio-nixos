@@ -11,11 +11,17 @@
     firewall = {
       enable = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       allowedTCPPorts = [ 443 80 ];
       allowedUDPPorts = [ 443 80 44857 ];
       allowPing = false;
 >>>>>>> 0e212d2 (Add security modules)
+=======
+      allowedTCPPorts = [ 443 80 ];
+      allowedUDPPorts = [ 443 80 44857 ];
+      allowPing = false;
+>>>>>>> 05c057b (A stable config)
     };
   };
 }

@@ -7,6 +7,7 @@
 
   programs.firejail.enable = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 }
 
@@ -15,3 +16,8 @@
 
 }
 >>>>>>> 0e212d2 (Add security modules)
+=======
+  security.protectKernelImage = true;
+
+}
+>>>>>>> 05c057b (A stable config)
