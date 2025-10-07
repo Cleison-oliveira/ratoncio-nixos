@@ -47,14 +47,20 @@ xrandr --output DisplayPort-2 --set TearFree on &
 xrandr --output DisplayPort-0 --mode 1920x1080 --rate 144
 xrandr --output DisplayPort-2 --mode 1920x1080 --rate 144
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 0e212d2 (Add security modules)
 XCURSOR_THEME="BreezeX-Light"
 XCURSOR_SIZE="24"
 
 exec picom -b &
 thunar --daemon &
+<<<<<<< HEAD
 xfce4-terminal --daemon &
+=======
+>>>>>>> 0e212d2 (Add security modules)
 feh --bg-scale ~/.config/wallpaper.svg &
 eval "$(dbus-launch --sh-syntax --exit-with-session)" &
 exec i3 > ~/.i3log 2>&1

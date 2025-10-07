@@ -96,8 +96,11 @@ in
           options = "compose:ralt";
         };
 
+<<<<<<< HEAD
         time.timeZone = "America/Bahia";
 
+=======
+>>>>>>> 0e212d2 (Add security modules)
         i18n.defaultLocale = "en_US.UTF-8";
         i18n.extraLocaleSettings = {
           LC_ADDRESS = "pt_BR.UTF-8";

@@ -23,7 +23,10 @@
         lxappearance
         xclip
         maim
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0e212d2 (Add security modules)
       ];
     };
   };
@@ -47,7 +50,12 @@
   programs.thunar.plugins = with pkgs.xfce; [
     thunar-archive-plugin
     thunar-volman
+<<<<<<< HEAD
 
+=======
+    xfce4-terminal
+    ristretto
+>>>>>>> 0e212d2 (Add security modules)
   ];
 
   environment.etc."X11/xinit/xinitrc".text = builtins.readFile ./xinitrc;

@@ -14,13 +14,19 @@
     vscodium
     librewolf
     chromium
+<<<<<<< HEAD
     fastfetch
+=======
+>>>>>>> 0e212d2 (Add security modules)
     telegram-desktop
     keepassxc
     kdePackages.kdenlive
     nix-ld
     onlyoffice-desktopeditors
+<<<<<<< HEAD
     gnome-disk-utility
+=======
+>>>>>>> 0e212d2 (Add security modules)
     asciidoc-full-with-plugins
 
   ] ++ (with unstable; [

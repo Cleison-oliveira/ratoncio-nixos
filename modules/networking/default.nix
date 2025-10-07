@@ -10,6 +10,12 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
+<<<<<<< HEAD
+=======
+      allowedTCPPorts = [ 443 80 ];
+      allowedUDPPorts = [ 443 80 44857 ];
+      allowPing = false;
+>>>>>>> 0e212d2 (Add security modules)
     };
   };
 }

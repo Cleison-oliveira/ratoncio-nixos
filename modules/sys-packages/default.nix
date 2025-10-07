@@ -52,8 +52,11 @@
     pulseaudio
     appimage-run
 
+<<<<<<< HEAD
     xfce.xfce4-terminal
     xfce.ristretto
+=======
+>>>>>>> 0e212d2 (Add security modules)
     mate.engrampa
     adwaita-icon-theme
     hicolor-icon-theme
