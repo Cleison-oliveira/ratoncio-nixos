@@ -6,10 +6,6 @@
   home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
-<<<<<<< HEAD
-    yt-dlp
-=======
->>>>>>> master
     krita
     inkscape
     gimp3
@@ -17,38 +13,12 @@
     vscodium
     librewolf
     chromium
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    fastfetch
-=======
->>>>>>> 0e212d2 (Add security modules)
-=======
->>>>>>> 05c057b (A stable config)
-    telegram-desktop
-    keepassxc
-    kdePackages.kdenlive
-    nix-ld
-    onlyoffice-desktopeditors
-<<<<<<< HEAD
-<<<<<<< HEAD
-    gnome-disk-utility
-=======
->>>>>>> 0e212d2 (Add security modules)
-    asciidoc-full-with-plugins
-
-=======
-    asciidoc-full-with-plugins
-    keet
->>>>>>> 05c057b (A stable config)
-=======
     telegram-desktop
     keepassxc
     kdePackages.kdenlive
     onlyoffice-desktopeditors
     asciidoc-full-with-plugins
     keet
->>>>>>> master
   ] ++ (with unstable; [
     wasabiwallet
   ]);

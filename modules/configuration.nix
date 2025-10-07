@@ -11,6 +11,8 @@
     ./networking
   ];
 
+  system.stateVersion = "25.05";
+
   security.doas.extraRules = [{
     users = [ "ratoncio" ];
     keepEnv = true;
@@ -109,8 +111,6 @@
     XCURSOR_SIZE = "24";
     EDITOR = "nvim";
   };
-
-  system.stateVersion = "25.05";
 
   fonts.packages = with pkgs; [
     font-awesome
