@@ -49,6 +49,7 @@ xrandr --output DisplayPort-2 --mode 1920x1080 --rate 144
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -63,6 +64,8 @@ xfce4-terminal --daemon &
 =======
 >>>>>>> 0e212d2 (Add security modules)
 =======
+=======
+>>>>>>> master
 XCURSOR_THEME="BreezeX-Light"
 XCURSOR_SIZE="24"
 
@@ -74,7 +77,10 @@ export XDG_MENU_PREFIX=applications-
 exec picom -b &
 thunar --daemon &
 xfce4-terminal --daemon &
+<<<<<<< HEAD
 >>>>>>> 05c057b (A stable config)
+=======
+>>>>>>> master
 feh --bg-scale ~/.config/wallpaper.svg &
 eval "$(dbus-launch --sh-syntax --exit-with-session)" &
 exec i3 > ~/.i3log 2>&1

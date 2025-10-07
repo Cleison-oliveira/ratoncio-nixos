@@ -54,12 +54,15 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     xfce.xfce4-terminal
     xfce.ristretto
 =======
 >>>>>>> 0e212d2 (Add security modules)
 =======
 >>>>>>> 05c057b (A stable config)
+=======
+>>>>>>> master
     mate.engrampa
     adwaita-icon-theme
     hicolor-icon-theme
@@ -68,8 +71,11 @@
     xdg-user-dirs
     dconf
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 05c057b (A stable config)
+=======
+>>>>>>> master
   ];
 }

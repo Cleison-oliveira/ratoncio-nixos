@@ -5,10 +5,14 @@ let
     (builtins.fetchTarball {
       url = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
 <<<<<<< HEAD
+<<<<<<< HEAD
       sha256 = "02w5j06nl2gddh9ifz1647b8bilhzkqg9c93f14cl4k0kq9c8fl1";
 =======
       sha256 = "sha256:0li963r2wpngqc1hxmp9c6y6c313h3is36d9czbw2rzrasqyayad";
 >>>>>>> 05c057b (A stable config)
+=======
+      sha256 = "sha256:0li963r2wpngqc1hxmp9c6y6c313h3is36d9czbw2rzrasqyayad";
+>>>>>>> master
     })
     {
       system = pkgs.system;
@@ -46,9 +50,13 @@ in
         nixpkgs.config.allowUnfree = true;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         
 >>>>>>> 05c057b (A stable config)
+=======
+        
+>>>>>>> master
         boot.kernelPackages = pkgs.linuxPackages_latest;
 
         users.users.steam = {
@@ -106,12 +114,15 @@ in
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         time.timeZone = "America/Bahia";
 
 =======
 >>>>>>> 0e212d2 (Add security modules)
 =======
 >>>>>>> 05c057b (A stable config)
+=======
+>>>>>>> master
         i18n.defaultLocale = "en_US.UTF-8";
         i18n.extraLocaleSettings = {
           LC_ADDRESS = "pt_BR.UTF-8";

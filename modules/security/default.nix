@@ -8,6 +8,7 @@
   programs.firejail.enable = true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 }
 
@@ -21,3 +22,8 @@
 
 }
 >>>>>>> 05c057b (A stable config)
+=======
+  security.protectKernelImage = true;
+
+}
+>>>>>>> master

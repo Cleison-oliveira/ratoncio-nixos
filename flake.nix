@@ -13,6 +13,7 @@
 
   outputs = inputs@{ self, nix-unstable, nixpkgs, home-manager, ... }:
 <<<<<<< HEAD
+<<<<<<< HEAD
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -48,6 +49,8 @@
 }
 
 =======
+=======
+>>>>>>> master
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -83,4 +86,7 @@
     };
   };
 }
+<<<<<<< HEAD
 >>>>>>> 05c057b (A stable config)
+=======
+>>>>>>> master

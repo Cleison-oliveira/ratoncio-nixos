@@ -2,9 +2,12 @@
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 05c057b (A stable config)
+=======
+>>>>>>> master
   imports = [
     ./picom.nix
   ];
@@ -28,11 +31,14 @@
         maim
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 0e212d2 (Add security modules)
 =======
 >>>>>>> 05c057b (A stable config)
+=======
+>>>>>>> master
       ];
     };
   };
@@ -58,6 +64,7 @@
     thunar-volman
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     xfce4-terminal
@@ -67,6 +74,10 @@
     xfce4-terminal
     ristretto
 >>>>>>> 05c057b (A stable config)
+=======
+    xfce4-terminal
+    ristretto
+>>>>>>> master
   ];
 
   environment.etc."X11/xinit/xinitrc".text = builtins.readFile ./xinitrc;

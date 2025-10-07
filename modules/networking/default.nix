@@ -12,6 +12,7 @@
       enable = true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       allowedTCPPorts = [ 443 80 ];
       allowedUDPPorts = [ 443 80 44857 ];
@@ -22,6 +23,11 @@
       allowedUDPPorts = [ 443 80 44857 ];
       allowPing = false;
 >>>>>>> 05c057b (A stable config)
+=======
+      allowedTCPPorts = [ 443 80 ];
+      allowedUDPPorts = [ 443 80 44857 ];
+      allowPing = false;
+>>>>>>> master
     };
   };
 }
