@@ -9,6 +9,7 @@
     ./fish
     ./security
     ./networking
+    ./virtualization
   ];
 
   system.stateVersion = "25.05";
@@ -89,18 +90,6 @@
     layout = "us";
     variant = "";
     options = "compose:ralt";
-  };
-
-  virtualisation.docker = {
-    enable = false;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-      daemon.settings = {
-        dns = [ "185.228.168.168" "185.228.169.168" ];
-        registry-mirrors = [ "https://mirror.gcr.io" ];
-      };
-    };
   };
 
   environment.variables = {
