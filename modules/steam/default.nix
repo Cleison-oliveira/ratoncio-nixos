@@ -41,7 +41,7 @@ in
 
         nixpkgs.config.allowUnfree = true;
 
-        
+
         boot.kernelPackages = pkgs.linuxPackages_latest;
 
         users.users.steam = {

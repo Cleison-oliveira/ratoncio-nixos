@@ -1,5 +1,5 @@
-
-self: super: let
+self: super:
+let
   pname = "keet";
   version = "2.5.2";
   src = super.pkgs.fetchzip {
@@ -17,15 +17,17 @@ in
       graphene
     ];
 
-    extraInstallCommands = let
-      appimageContents = super.pkgs.appimageTools.extract {
-        inherit pname version;
-        src = "${src}/Keet.AppImage";
-      };
-    in ''
-      install -m 444 -D ${appimageContents}/Keet.desktop -t $out/share/applications
-      cp -r ${appimageContents}/*.png $out/share
-    '';
+    extraInstallCommands =
+      let
+        appimageContents = super.pkgs.appimageTools.extract {
+          inherit pname version;
+          src = "${src}/Keet.AppImage";
+        };
+      in
+      ''
+        install -m 444 -D ${appimageContents}/Keet.desktop -t $out/share/applications
+        cp -r ${appimageContents}/*.png $out/share
+      '';
 
     meta = with super.pkgs.lib; {
       description = "Peer-to-Peer Chat";

@@ -12,38 +12,38 @@
   };
 
   outputs = inputs@{ self, nix-unstable, nixpkgs, home-manager, ... }:
-  let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      overlays = [
-        (import ./overlays/keet-overlay.nix)
-      ];
-      config.allowUnfree = true;
-    };
-    unstable = import nix-unstable {
-      inherit system;
-      config.allowUnfree = true;
-    };
-  in
-  {
-    nixosConfigurations = {
-      rataria = nixpkgs.lib.nixosSystem {
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
         inherit system;
-        modules = [
-          ./modules/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.ratoncio = import ./modules/home/ratoncio {
-              inherit inputs pkgs unstable;
-              config = { };
-            };
-          }
+        overlays = [
+          (import ./overlays/keet-overlay.nix)
         ];
+        config.allowUnfree = true;
+      };
+      unstable = import nix-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
+    {
+      nixosConfigurations = {
+        rataria = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./modules/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.ratoncio = import ./modules/home/ratoncio {
+                inherit inputs pkgs unstable;
+                config = { };
+              };
+            }
+          ];
+        };
       };
     };
-  };
 }

@@ -11,9 +11,5 @@
       };
     };
   };
-    virtualisation.libvirtd = {
-    libvirtd = {
-      enable = false;
-    };
-  };
+  virtualisation.libvirtd.enable = false;
 }
