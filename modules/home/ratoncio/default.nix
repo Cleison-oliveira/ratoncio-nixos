@@ -6,7 +6,6 @@
   home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
-    yt-dlp
     krita
     inkscape
     gimp3
@@ -17,7 +16,6 @@
     telegram-desktop
     keepassxc
     kdePackages.kdenlive
-    nix-ld
     onlyoffice-desktopeditors
     asciidoc-full-with-plugins
     keet

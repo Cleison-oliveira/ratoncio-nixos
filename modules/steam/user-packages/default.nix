@@ -18,7 +18,6 @@ with pkgs;
   steam-run
   mangojuice
   vulkan-tools
-  steam-rom-manager
   umu-launcher
 ] ++ (with unstable; [
   lsfg-vk-ui
