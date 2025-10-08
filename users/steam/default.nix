@@ -22,26 +22,26 @@
     ];
 
     packages = (with pkgs; [
-    discord
-    chromium
-    telegram-desktop
-    kdePackages.kdenlive
-    mangohud
-    lutris
-    heroic
-    rpcs3
-    pcsx2
-    dolphin-emu
-    protonup-qt
-    git
-    steam-run
-    mangojuice
-    vulkan-tools
-    umu-launcher
-  ]) ++ (with unstable; [
-    lsfg-vk-ui
-    lsfg-vk
-  ]);
+      discord
+      chromium
+      telegram-desktop
+      kdePackages.kdenlive
+      mangohud
+      lutris
+      heroic
+      rpcs3
+      pcsx2
+      dolphin-emu
+      protonup-qt
+      git
+      steam-run
+      mangojuice
+      vulkan-tools
+      umu-launcher
+    ]) ++ (with unstable; [
+      lsfg-vk-ui
+      lsfg-vk
+    ]);
 
     hashedPassword = "$6$dt44z3QLC3K/FN3E$fDcoLNUmuqjFNxZIjq37NcuWt7Qfn06wJua.5lLlJNOxZrzLJwP3wbxlbm5Hpz9MZoMV3KCfWvGENAxdnNCV//";
   };

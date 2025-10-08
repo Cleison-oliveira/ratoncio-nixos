@@ -44,10 +44,6 @@
               home-manager.users.ratoncio = import ./modules/home-manager/ratoncio {
                 inherit inputs pkgs unstable;
                 config = { };
-              home-manager.users.steam = import ./modules/home-manager/steam {
-                  inherit pkgs unstable;
-                  config = { };
-                };
               };
             }
           ];

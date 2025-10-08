@@ -33,15 +33,15 @@
   environment.variables = {
     # Session
     XDG_CURRENT_DESKTOP = "i3";
-    XDG_SESSION_DESKTOP  = "i3";
-    XDG_SESSION_TYPE     = "x11";
+    XDG_SESSION_DESKTOP = "i3";
+    XDG_SESSION_TYPE = "x11";
 
     # GTK Theme
-    GTK_THEME       = "Catppuccin-Mocha-Standard-Mauve-Dark";
-    GTK_ICON_THEME  = "Papirus-Dark";
+    GTK_THEME = "Catppuccin-Mocha-Standard-Mauve-Dark";
+    GTK_ICON_THEME = "Papirus-Dark";
 
-    XCURSOR_SIZE    = "24";
-    XCURSOR_THEME   = "Breeze_Light";
+    XCURSOR_SIZE = "24";
+    XCURSOR_THEME = "Breeze_Light";
 
     QT_QPA_PLATFORMTHEME = "qt6ct";
 
