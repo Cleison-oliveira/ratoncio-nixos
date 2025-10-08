@@ -40,7 +40,6 @@
     nixpkgs-fmt
     feh
 
-    discord
     vim
     neovim
 

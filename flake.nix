@@ -30,16 +30,24 @@
       nixosConfigurations = {
         rataria = nixpkgs.lib.nixosSystem {
           inherit system;
+          specialArgs = { inherit unstable; };
           modules = [
             ./modules/configuration.nix
+            ./modules/steam
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.ratoncio = import ./modules/home/ratoncio {
+
+              home-manager.users.ratoncio = import ./modules/home-manager/ratoncio {
                 inherit inputs pkgs unstable;
                 config = { };
+              home-manager.users.steam = import ./modules/home-manager/steam {
+                  inherit pkgs unstable;
+                  config = { };
+                };
               };
             }
           ];

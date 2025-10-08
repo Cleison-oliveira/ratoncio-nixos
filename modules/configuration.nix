@@ -4,40 +4,25 @@
   imports = [
     ./hardware-configuration.nix
     ./sys-packages
-    ./i3wm
+    ./window-manager
     ./steam
     ./fish
     ./security
     ./networking
     ./virtualization
+    ../users/ratoncio
+    ./fonts
   ];
 
   system.stateVersion = "25.05";
+
+  networking.hostName = "rataria";
 
   security.doas.extraRules = [{
     users = [ "ratoncio" ];
     keepEnv = true;
     persist = true;
   }];
-
-  users.users.ratoncio = {
-    isNormalUser = true;
-    shell = pkgs.fish;
-    description = "ratoncio";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "allowusers"
-      "docker"
-      "input"
-      "audio"
-      "render"
-      "video"
-    ];
-    packages = with pkgs; [
-    ];
-    hashedPassword = "$6$4jahjQj8GmEKllbZ$qDP2NqWQ3R4XzU8C66S8dWp1hGFW4QdSL1biKndyp.O31yvhvZWJbKYGEUwVfOa6UWYgWsjDPItsQNhbeTK3N1";
-  };
 
   boot.kernelParams = [
     "pcie_aspm=off"
@@ -91,30 +76,4 @@
     variant = "";
     options = "compose:ralt";
   };
-
-  environment.variables = {
-    GTK_THEME = "Catppuccin-Mocha-Standard-Mauve-Dark";
-    QT_QPA_PLATFORMTHEME = "qt6ct";
-    XCURSOR_THEME = "Breeze_Light";
-    GTK_ICON_THEME = "Papirus-Dark";
-    XCURSOR_SIZE = "24";
-    EDITOR = "nvim";
-  };
-
-  fonts.packages = with pkgs; [
-    font-awesome
-    nerd-fonts.fira-code
-    nerd-fonts.ubuntu
-    nerd-fonts.jetbrains-mono
-    dejavu_fonts
-    liberation_ttf
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    powerline-fonts
-    corefonts
-    powerline-symbols
-    nerd-fonts.adwaita-mono
-    nerd-fonts.jetbrains-mono
-  ];
 }
