@@ -23,24 +23,6 @@
     wasabiwallet
   ]);
 
-  home.sessionVariables = {
-    # Session
-    XDG_CURRENT_DESKTOP = "i3";
-    XDG_SESSION_DESKTOP = "i3";
-    XDG_SESSION_TYPE = "x11";
-
-    # GTK Theme
-    GTK_THEME = "Catppuccin-Mocha-Standard-Mauve-Dark";
-    GTK_ICON_THEME = "Papirus-Dark";
-
-    XCURSOR_SIZE = "24";
-    XCURSOR_THEME = "Breeze_Light";
-
-    QT_QPA_PLATFORMTHEME = "qt6ct";
-
-    EDITOR = "nvim";
-  };
-
   programs.git = {
     userName = "Cleison-oliveira";
     userEmail = "cleisonao59@gmail.com";
@@ -49,14 +31,14 @@
   xdg.userDirs = {
     enable = true;
     createDirectories = true;
-    desktop = "\$HOME/desktop";
-    documents = "\$HOME/documents";
-    download = "\$HOME/downloads";
-    music = "\$HOME/music";
-    pictures = "\$HOME/pictures";
-    publicShare = "\$HOME/public";
-    templates = "\$HOME/templates";
-    videos = "\$HOME/videos";
+    desktop = "\$HOME/Desktop";
+    documents = "\$HOME/Documents";
+    download = "\$HOME/Downloads";
+    music = "\$HOME/Music";
+    pictures = "\$HOME/Pictures";
+    publicShare = "\$HOME/Public";
+    templates = "\$HOME/Templates";
+    videos = "\$HOME/Videos";
   };
 
   home.file = { };
