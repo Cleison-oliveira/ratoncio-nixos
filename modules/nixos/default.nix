@@ -1,19 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./sys-packages
-    ./window-manager
-    ./steam
-    ./fish
-    ./security
-    ./networking
-    ./virtualization
-    ../users/ratoncio
-    ./fonts
-  ];
-
   system.stateVersion = "25.05";
 
   networking.hostName = "rataria";

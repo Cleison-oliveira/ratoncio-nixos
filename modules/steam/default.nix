@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ../hardware-configuration.nix
+    ../hardware-configuration
   ];
 
   specialisation = {
@@ -10,7 +10,7 @@
       configuration = {
 
         imports = [
-          ../hardware-configuration.nix
+          ../hardware-configuration
           ../../users/steam
           ../window-manager
           ../sys-packages

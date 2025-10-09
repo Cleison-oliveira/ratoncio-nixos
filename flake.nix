@@ -32,7 +32,7 @@
           inherit system;
           specialArgs = { inherit unstable; };
           modules = [
-            ./modules/configuration.nix
+            ./modules
             ./modules/steam
             home-manager.nixosModules.home-manager
             {
