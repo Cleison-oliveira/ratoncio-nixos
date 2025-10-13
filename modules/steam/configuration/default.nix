@@ -3,7 +3,7 @@
 {
   system.stateVersion = "25.05";
 
-  networking.hostName = "baianagem";
+  networking.hostName = "gaming";
 
   nixpkgs.config.allowUnfree = true;
 

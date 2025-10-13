@@ -58,7 +58,7 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
-    environment.variables = {
+  environment.variables = {
     # Session
     XDG_CURRENT_DESKTOP = "i3";
     XDG_SESSION_DESKTOP = "i3";
