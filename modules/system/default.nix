@@ -10,6 +10,7 @@
     ./packages.nix
     ./packages.nix
     ./security.nix
+    ./timezone.nix
     ./xdg.nix
   ];
 }

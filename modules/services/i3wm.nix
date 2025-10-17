@@ -6,10 +6,9 @@
     desktopManager = {
       xterm.enable = false;
     };
-    displayManager =
-      {
-        startx.enable = true;
-      };
+    displayManager = {
+      startx.enable = true;
+    };
     excludePackages = [ pkgs.xterm ];
 
     windowManager.i3 = {
