@@ -24,7 +24,6 @@
     packages = (with pkgs; [
       discord
       chromium
-      telegram-desktop
       kdePackages.kdenlive
       mangohud
       lutris

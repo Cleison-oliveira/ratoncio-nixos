@@ -2,9 +2,8 @@
 
 {
   imports = [
-    ./hardware-configuration
     ./nixos
-    ./sys-packages
+    ./packages
     ./window-manager
     ./steam
     ./fish
@@ -13,5 +12,7 @@
     ./virtualization
     ../users/ratoncio
     ./fonts
+    ./hardware
+    ./hardware/sane.nix
   ];
 }

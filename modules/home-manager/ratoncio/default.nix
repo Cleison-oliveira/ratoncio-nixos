@@ -13,12 +13,11 @@
     vscodium
     librewolf
     chromium
-    telegram-desktop
     keepassxc
     kdePackages.kdenlive
-    onlyoffice-desktopeditors
     asciidoc-full-with-plugins
     keet
+    simple-scan
   ] ++ (with unstable; [
     wasabiwallet
   ]);

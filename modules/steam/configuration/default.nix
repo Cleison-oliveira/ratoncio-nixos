@@ -2,10 +2,7 @@
 
 {
   system.stateVersion = "25.05";
-
   networking.hostName = "gaming";
-
-  nixpkgs.config.allowUnfree = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -13,15 +10,7 @@
     "pcie_aspm=off"
     "quiet"
   ];
-
-  hardware.enableAllFirmware = true;
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
-  services.gvfs.enable = true;
-
+  
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -37,7 +26,7 @@
     XDG_SESSION_TYPE = "x11";
 
     # GTK Theme
-    GTK_THEME = "Catppuccin-Mocha-Standard-Mauve-Dark";
+    GTK_THEME = "Catppuccin-Dark";
     GTK_ICON_THEME = "Papirus-Dark";
 
     XCURSOR_SIZE = "24";
@@ -46,12 +35,6 @@
     QT_QPA_PLATFORMTHEME = "qt6ct";
 
     EDITOR = "nvim";
-  };
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-    options = "compose:ralt";
   };
 
   i18n.defaultLocale = "en_US.UTF-8";

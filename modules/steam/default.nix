@@ -1,19 +1,18 @@
 { ... }:
 {
   imports = [
-    ../hardware-configuration
+    ../hardware
   ];
 
   specialisation = {
     steamos = {
       inheritParentConfig = false;
       configuration = {
-
         imports = [
-          ../hardware-configuration
+          ../hardware
           ../../users/steam
           ../window-manager
-          ../sys-packages
+          ../packages
           ./gaming
           ../fish
           ../security

@@ -2,7 +2,6 @@
 
 {
   system.stateVersion = "25.05";
-
   networking.hostName = "rataria";
 
   security.doas.extraRules = [{
@@ -16,25 +15,14 @@
     "quiet"
   ];
 
-  nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  services.gvfs.enable = true;
-
+  
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-  };
-
-  hardware = {
-    enableAllFirmware = true;
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
   };
 
   boot.loader.systemd-boot.enable = true;
@@ -65,7 +53,7 @@
     XDG_SESSION_TYPE = "x11";
 
     # GTK Theme
-    GTK_THEME = "Catppuccin-Mocha-Standard-Mauve-Dark";
+    GTK_THEME = "Catppuccin-Dark";
     GTK_ICON_THEME = "Papirus-Dark";
 
     XCURSOR_SIZE = "24";
@@ -74,11 +62,5 @@
     QT_QPA_PLATFORMTHEME = "qt6ct";
 
     EDITOR = "nvim";
-  };
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-    options = "compose:ralt";
   };
 }

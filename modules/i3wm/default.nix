@@ -22,6 +22,7 @@
         lxappearance
         xclip
         maim
+        gtk-engine-murrine
       ];
     };
   };
@@ -36,6 +37,7 @@
 
   services.xserver.displayManager.startx.enable = true;
   services.dbus.enable = true;
+  services.gvfs.enable = true;
   programs.i3lock.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];
 
