@@ -1,6 +1,4 @@
-{ config, pkgs, unstable, ... }:
-
-{
+{ config, pkgs, unstable, ... }: {
   home.username = "ratoncio";
   home.homeDirectory = "/home/ratoncio";
   home.stateVersion = "25.05";
@@ -17,6 +15,7 @@
     kdePackages.kdenlive
     asciidoc-full-with-plugins
     keet
+    onlyoffice-desktopeditors
     simple-scan
   ] ++ (with unstable; [
     wasabiwallet
@@ -39,6 +38,5 @@
     templates = "\$HOME/Templates";
     videos = "\$HOME/Videos";
   };
-
   home.file = { };
 }

@@ -1,10 +1,4 @@
-{ config, lib, pkgs, ... }:
-
-{
-  imports = [
-    ./picom.nix
-  ];
-
+{ config, lib, pkgs, ... }: {
   environment.pathsToLink = [ "/libexec" ];
   services.xserver = {
     enable = true;
@@ -12,6 +6,11 @@
     desktopManager = {
       xterm.enable = false;
     };
+    displayManager =
+      {
+        startx.enable = true;
+      };
+    excludePackages = [ pkgs.xterm ];
 
     windowManager.i3 = {
       enable = true;
@@ -22,24 +21,10 @@
         lxappearance
         xclip
         maim
-        gtk-engine-murrine
+        i3lock
       ];
     };
   };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    config = {
-      common.default = [ "gtk" ];
-    };
-  };
-
-  services.xserver.displayManager.startx.enable = true;
-  services.dbus.enable = true;
-  services.gvfs.enable = true;
-  programs.i3lock.enable = true;
-  services.xserver.excludePackages = [ pkgs.xterm ];
 
   # File manager config
   programs.thunar.enable = true;
@@ -52,6 +37,5 @@
   ];
 
   environment.etc."X11/xinit/xinitrc".text = builtins.readFile ./xinitrc;
-
   services.tumbler.enable = true;
 }

@@ -1,12 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
-    imports = [
-    ./flatpak.nix
-  ];
-  
   nixpkgs.config.allowUnfree = true;
-  
+
   environment.systemPackages = with pkgs; [
     wget
     gcc
@@ -15,8 +11,6 @@
     glib
     fzf
     gnumake
-    libGL
-    hplip
 
     qt5.qtbase
     qt6.qtbase

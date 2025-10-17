@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   virtualisation.docker = {
     enable = false;
     rootless = {
@@ -11,5 +10,4 @@
       };
     };
   };
-  virtualisation.libvirtd.enable = false;
 }

@@ -1,8 +1,5 @@
-{ config, pkgs, lib, ... }:
-
-{
+{ config, pkgs, lib, ... }: {
   services.flatpak.enable = true;
-
   systemd.services.flatpak-repo = {
     description = "Add Flathub remote for Flatpak";
     wantedBy = [ "multi-user.target" ];

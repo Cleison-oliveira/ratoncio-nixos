@@ -1,7 +1,4 @@
-{ config, pkgs, ... }:
-
-{
-
+{ config, pkgs, ... }: {
   time.timeZone = "America/Bahia";
 
   networking = {

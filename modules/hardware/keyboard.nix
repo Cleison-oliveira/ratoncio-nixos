@@ -1,5 +1,4 @@
-{ config, lib, ... }:
-{ 
+{ config, lib, ... }: {
   services.xserver.xkb = {
     layout = "us";
     variant = "";

@@ -12,42 +12,42 @@
   };
 
   outputs = inputs@{ self, nix-unstable, nixpkgs, home-manager, ... }:
-  let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      overlays = [
-        (import ./overlays/keet-overlay.nix)
-      ];
-      config.allowUnfree = true;
-    };
-    unstable = import nix-unstable {
-      inherit system;
-      config.allowUnfree = true;
-    };
-  in
-  {
-    nixosConfigurations = {
-      rataria = nixpkgs.lib.nixosSystem {
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
         inherit system;
-        specialArgs = { inherit unstable; };
-        modules = [
-          ./modules
-          ./modules/steam
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { inherit inputs; };
-
-            home-manager.users.ratoncio = import ./modules/home-manager/ratoncio {
-              inherit inputs pkgs unstable;
-              config = { };
-            };
-          }
+        overlays = [
+          (import ./overlays/keet-overlay.nix)
         ];
+        config.allowUnfree = true;
+      };
+      unstable = import nix-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
+    {
+      nixosConfigurations = {
+        rataria = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit unstable; };
+          modules = [
+            ./modules
+            ./modules/gaming-specialisation.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.extraSpecialArgs = { inherit inputs; };
+
+              home-manager.users.ratoncio = import ./modules/home-manager/ratoncio {
+                inherit inputs pkgs unstable;
+                config = { };
+              };
+            }
+          ];
+        };
       };
     };
-  };
 }
