@@ -13,6 +13,7 @@
           ./services
           ./system
           ../users/steam
+          ./themes
         ];
 
         system.stateVersion = "25.05";

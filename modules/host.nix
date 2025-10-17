@@ -5,6 +5,7 @@
     ./services
     ./system
     ../users/ratoncio
+    ./themes
     ./virtual
   ];
 
