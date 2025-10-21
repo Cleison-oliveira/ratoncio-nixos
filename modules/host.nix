@@ -1,7 +1,6 @@
 { config, pkgs, ... }: {
   imports = [
     ./hardware
-    ./hardware/sane.nix
     ./services
     ./system
     ../users/ratoncio
@@ -14,5 +13,9 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelModules = [ "kvm-amd" "tun" ];
   programs.git.enable = true;
+
+  hardware.sane.enable = true;
+  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
 }

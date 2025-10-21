@@ -1,6 +1,6 @@
 { ... }: {
-  virtualisation = {
-    libvirtd = {
+  services = {
+    fstrim = {
       enable = true;
     };
   };

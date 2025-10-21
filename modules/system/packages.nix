@@ -32,6 +32,7 @@
     libarchive
 
     lua5_1
+    R
     luarocks-nix
     tree-sitter
     (python3.withPackages (ps: with ps; [ pynvim ]))
@@ -60,5 +61,6 @@
     xdg-utils
     xdg-user-dirs
     dconf
+    apparmor-utils
   ];
 }

@@ -5,4 +5,5 @@
   security.polkit.enable = true;
   security.protectKernelImage = true;
   programs.firejail.enable = true;
+  security.apparmor.enable = true;
 }

@@ -12,5 +12,6 @@
     ./security.nix
     ./timezone.nix
     ./xdg.nix
+    ./zram.nix
   ];
 }

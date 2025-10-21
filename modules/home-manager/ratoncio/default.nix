@@ -17,6 +17,10 @@
     keet
     onlyoffice-desktopeditors
     simple-scan
+    hplip
+    freerdp
+    remmina
+    telegram-desktop
   ] ++ (with unstable; [
     wasabiwallet
   ]);
