@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   security.doas.extraRules = [{
     users = [ "ratoncio" ];
     keepEnv = true;

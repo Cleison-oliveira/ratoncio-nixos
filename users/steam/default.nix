@@ -1,5 +1,4 @@
-{ config, pkgs, unstable, ... }:
-{
+{ config, pkgs, unstable, ... }: {
   security.doas.extraRules = [{
     users = [ "steam" ];
     keepEnv = true;
@@ -32,7 +31,6 @@
       pcsx2
       dolphin-emu
       protonup-qt
-      git
       steam-run
       mangojuice
       vulkan-tools

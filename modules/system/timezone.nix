@@ -1,3 +1,5 @@
 { ... }: {
-  time.timeZone = "America/Bahia";
+  time = {
+    timeZone = "America/Bahia";
+  };
 }

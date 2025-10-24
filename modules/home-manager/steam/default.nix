@@ -1,33 +1,12 @@
 { config, pkgs, unstable, ... }: {
-  home.username = "ratoncio";
-  home.homeDirectory = "/home/ratoncio";
+  home.username = "steam";
+  home.homeDirectory = "/home/steam";
   home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
-    krita
-    inkscape
-    gimp3
-    antora
-    vscodium
-    librewolf
-    chromium
-    keepassxc
-    keet
-    kdePackages.kdenlive
-    asciidoc-full-with-plugins
-    onlyoffice-desktopeditors
-    simple-scan
-    hplip
-    freerdp
-    remmina
   ] ++ (with unstable; [
-    wasabiwallet
-  ]);
 
-  programs.git = {
-    userName = "Cleison-oliveira";
-    userEmail = "cleisonao59@gmail.com";
-  };
+  ]);
 
   xdg.userDirs = {
     enable = true;

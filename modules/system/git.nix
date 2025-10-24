@@ -1,6 +1,6 @@
 { ... }: {
-  services = {
-    fstrim = {
+  programs = {
+    git = {
       enable = true;
     };
   };

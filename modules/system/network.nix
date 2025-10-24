@@ -9,6 +9,11 @@
       allowPing = false;
     };
   };
-  services.avahi.enable = true;
-  services.avahi.nssmdns4 = true;
+
+  services = {
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+    };
+  };
 }

@@ -18,9 +18,6 @@
 
         system.stateVersion = "25.05";
         networking.hostName = "gaming";
-
-        boot.kernelPackages = pkgs.linuxPackages_latest;
-        programs.git.enable = true;
       };
     };
   };

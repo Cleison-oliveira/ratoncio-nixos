@@ -1,6 +1,4 @@
-{ config, lib, pkgs, ... }:
-
-{
+{ config, pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -43,7 +41,6 @@
     nixpkgs-fmt
     feh
 
-    vim
     neovim
 
     ffmpeg-full

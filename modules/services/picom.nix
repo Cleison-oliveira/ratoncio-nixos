@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-
-{
+{ config, pkgs, ... }: {
   services.picom.enable = true;
 
   environment.etc."xdg/picom/picom.conf".text = ''

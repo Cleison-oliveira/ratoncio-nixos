@@ -1,15 +1,19 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, ... }:
+
+{
   environment.pathsToLink = [ "/libexec" ];
+
   services.xserver = {
     enable = true;
     videoDrivers = [ "amdgpu" ];
+
     desktopManager = {
       xterm.enable = false;
     };
+
     displayManager = {
       startx.enable = true;
     };
-    excludePackages = [ pkgs.xterm ];
 
     windowManager.i3 = {
       enable = true;
@@ -23,6 +27,8 @@
         i3lock
       ];
     };
+
+    excludePackages = [ pkgs.xterm ];
   };
 
   # File manager config
@@ -35,6 +41,7 @@
     ristretto
   ];
 
-  environment.etc."X11/xinit/xinitrc".text = builtins.readFile ./xinitrc;
   services.tumbler.enable = true;
+  environment.etc."X11/xinit/xinitrc".text = builtins.readFile ./xinitrc;
+
 }
