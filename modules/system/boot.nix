@@ -11,10 +11,21 @@
 
     kernelPackages = linuxPackages_latest;
 
+    kernel = {
+      sysctl = {
+        "net.ipv4.ip_unprivileged_port_start" = 53;
+        "vm.swappiness" = 10;
+      };
+    };
+
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot = {
+        enable = true;
+      };
       timeout = 0;
-      efi.canTouchEfiVariables = true;
+      efi = {
+        canTouchEfiVariables = true;
+      };
     };
   };
 }

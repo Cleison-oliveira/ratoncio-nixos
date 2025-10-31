@@ -1,7 +1,11 @@
 { config, ... }: {
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-    options = "compose:ralt";
+  services = {
+    xserver = {
+      xkb = {
+        layout = "us";
+        variant = "";
+        options = "compose:ralt";
+      };
+    };
   };
 }

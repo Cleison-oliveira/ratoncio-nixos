@@ -1,6 +1,6 @@
-{ config, lib, pkgs, ... }: {
+{ ... }: {
   services = {
-    gvfs = {
+    tumbler = {
       enable = true;
     };
   };

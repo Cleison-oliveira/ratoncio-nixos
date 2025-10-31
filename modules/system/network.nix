@@ -1,7 +1,9 @@
 { config, pkgs, ... }: {
   networking = {
     nameservers = [ "185.228.168.168" "185.228.169.168" ];
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+    };
     firewall = {
       enable = true;
       allowedTCPPorts = [ 443 80 ];

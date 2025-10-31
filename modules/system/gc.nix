@@ -5,6 +5,7 @@
       dates = "weekly";
       options = "--max-freed 1G --delete-older-than 7d";
     };
+
     optimise = {
       automatic = true;
     };

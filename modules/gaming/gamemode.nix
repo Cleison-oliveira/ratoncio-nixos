@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  programs = { 
+  programs = {
     gamemode = {
       enable = true;
       settings = {

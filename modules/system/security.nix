@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
 
-  programs = { 
+  programs = {
     firejail = {
       enable = true;
     };
@@ -11,18 +11,18 @@
       enable = true;
     };
     doas = {
-      enable = true; 
+      enable = true;
     };
-    sudo = { 
+    sudo = {
       enable = false;
     };
-    polkit = { 
+    polkit = {
       enable = true;
     };
 
     protectKernelImage = true;
 
-    apparmor = { 
+    apparmor = {
       enable = true;
     };
   };

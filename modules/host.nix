@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   imports = [
     ./hardware
+    ./programs
     ./services
     ./system
     ../users/ratoncio
@@ -8,14 +9,24 @@
     ./virtual
   ];
 
-  system.stateVersion = "25.05";
-  networking.hostName = "rataria";
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  system = {
+    stateVersion = "25.05";
+  };
+
+  networking = {
+    hostName = "rataria";
+  };
+
+  nix = {
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+  };
 
   hardware = {
     sane = {
       enable = true;
-      extraBackends = [ pkgs.hplipWithPlugin ];
+      extraBackends = with pkgs; [ hplipWithPlugin ];
     };
   };
 }

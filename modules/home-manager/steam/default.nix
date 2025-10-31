@@ -1,24 +1,25 @@
 { config, pkgs, unstable, ... }: {
-  home.username = "steam";
-  home.homeDirectory = "/home/steam";
-  home.stateVersion = "25.05";
 
-  home.packages = with pkgs; [
-  ] ++ (with unstable; [
-
-  ]);
-
-  xdg.userDirs = {
-    enable = true;
-    createDirectories = true;
-    desktop = "\$HOME/Desktop";
-    documents = "\$HOME/Documents";
-    download = "\$HOME/Downloads";
-    music = "\$HOME/Music";
-    pictures = "\$HOME/Pictures";
-    publicShare = "\$HOME/Public";
-    templates = "\$HOME/Templates";
-    videos = "\$HOME/Videos";
+  home = {
+    username = "steam";
+    homeDirectory = "/home/steam";
+    stateVersion = "25.05";
+    file = { };
+    packages = import ./packages.nix { inherit pkgs unstable; };
   };
-  home.file = { };
+
+  xdg = {
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      desktop = "\$HOME/Desktop";
+      documents = "\$HOME/Documents";
+      download = "\$HOME/Downloads";
+      music = "\$HOME/Music";
+      pictures = "\$HOME/Pictures";
+      publicShare = "\$HOME/Public";
+      templates = "\$HOME/Templates";
+      videos = "\$HOME/Videos";
+    };
+  };
 }

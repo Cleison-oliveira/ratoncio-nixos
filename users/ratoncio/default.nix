@@ -1,13 +1,18 @@
-{ config, pkgs, ... }: {
-  security.doas.extraRules = [{
-    users = [ "ratoncio" ];
-    keepEnv = true;
-    persist = true;
-  }];
+{ config, pkgs, ... }: with pkgs; {
+
+  security = {
+    doas = {
+      extraRules = [{
+        users = [ "ratoncio" ];
+        keepEnv = true;
+        persist = true;
+      }];
+    };
+  };
 
   users.users.ratoncio = {
     isNormalUser = true;
-    shell = pkgs.fish;
+    shell = fish;
     description = "ratoncio";
     extraGroups = [
       "networkmanager"
