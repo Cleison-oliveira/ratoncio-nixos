@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: with pkgs; {
+{ pkgs, ... }: with pkgs; {
   boot = {
     kernelParams = [
       "pcie_aspm=off"

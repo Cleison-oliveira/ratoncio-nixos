@@ -11,7 +11,7 @@
     };
   };
 
-  outputs = inputs@{ self, nix-unstable, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ nix-unstable, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {

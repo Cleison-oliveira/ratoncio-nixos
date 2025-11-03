@@ -1,4 +1,4 @@
-{ config, pkgs, unstable, ... }: {
+{ pkgs, unstable, ... }: {
 
   home = {
     username = "steam";

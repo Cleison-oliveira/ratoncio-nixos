@@ -2,6 +2,7 @@
 
 with pkgs; [
   discord
+  telegram-desktop
   chromium
   kdePackages.kdenlive
   mangohud

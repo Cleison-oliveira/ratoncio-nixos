@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ ... }: {
   environment = {
     variables = {
       GTK_THEME = "Catppuccin-Dark";

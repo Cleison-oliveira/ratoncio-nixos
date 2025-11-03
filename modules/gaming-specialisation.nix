@@ -1,4 +1,4 @@
-{ config, lib, pkgs, unstable, inputs, ... }:
+{ pkgs, unstable, inputs, ... }:
 
 let
   homeManager = inputs.home-manager.nixosModules.home-manager;
@@ -19,6 +19,7 @@ in
           ./services
           ./system
           ../users/steam
+          ../users
           ./themes
           homeManager
         ];

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: {
+{ pkgs, ... }: {
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
     description = "Add Flathub remote for Flatpak";

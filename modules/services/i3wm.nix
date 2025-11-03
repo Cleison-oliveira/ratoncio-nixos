@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ pkgs, ... }: {
 
   environment = {
     pathsToLink = [ "/libexec" ];

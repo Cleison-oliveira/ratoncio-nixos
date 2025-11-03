@@ -1,10 +1,11 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./hardware
     ./programs
     ./services
     ./system
     ../users/ratoncio
+    ../users
     ./themes
     ./virtual
   ];
