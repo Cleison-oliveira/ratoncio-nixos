@@ -1,13 +1,11 @@
-{ pkgs, ... }:
-with pkgs; {
+{ unstable, ... }: with unstable; 
+{
   hardware = {
     enableAllFirmware = true;
     graphics = {
       enable = true;
       enable32Bit = true;
-      extraPackages = [
-        mesa
-      ];
+      package = mesa;
     };
   };
 }

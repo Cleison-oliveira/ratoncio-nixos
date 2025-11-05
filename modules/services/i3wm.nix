@@ -37,6 +37,8 @@
             xclip
             maim
             i3lock
+            python3Packages.i3ipc
+            autotiling
           ];
         };
       };

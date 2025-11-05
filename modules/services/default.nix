@@ -7,7 +7,6 @@
     ./i3wm.nix
     ./picom.nix
     ./pipewire.nix
-    ./preload.nix
     ./tumbler.nix
   ];
 }

@@ -1,7 +1,0 @@
-{ ... }: {
-  services = {
-    preload = {
-      enable = true;
-    };
-  };
-}
