@@ -5,64 +5,40 @@
     nix-unstable = {
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
-
-    nixpkgs = { 
+    catppuccin = {
+      url = "github:catppuccin/nix/release-25.05";
+    };
+    nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-25.05";
     };
-
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs = { nixpkgs.follows = "nixpkgs"; };
     };
   };
 
-  outputs = inputs@{ nix-unstable, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ nix-unstable, nixpkgs, ... }:
 
-  let
-    system = "x86_64-linux";
+    let
+      system = "x86_64-linux";
 
-    pkgs = import nixpkgs {
-      inherit system;
-      overlays = [
-        (import ./overlays/keet-overlay.nix)
-      ];
-      config = { 
-        allowUnfree = true;
-      };
-    };
-
-    unstable = import nix-unstable {
-      inherit system;
-      config = {
-        allowUnfree = true;
-      };
-    };
-  in
-
-  {
-    nixosConfigurations = {
-      rataria = nixpkgs.lib.nixosSystem {
+      unstable = import nix-unstable {
         inherit system;
-        specialArgs = { inherit inputs unstable; };
-        modules = [
-          ./modules
-          ./modules/gaming-specialisation.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              backupFileExtension = "backup";
-              extraSpecialArgs = { inherit unstable inputs; };
+        config = {
+          allowUnfree = true;
+        };
+      };
+    in
 
-              users.ratoncio = import ./modules/home-manager/ratoncio {
-                inherit inputs pkgs unstable;
-                config = { };
-              };
-            };
-          }
-        ];
+    {
+      nixosConfigurations = {
+        rataria = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs unstable; };
+          modules = [
+            ./nixos
+          ];
+        };
       };
     };
-  };
 }
