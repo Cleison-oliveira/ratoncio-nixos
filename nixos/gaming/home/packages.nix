@@ -6,6 +6,7 @@ with pkgs; [
   telegram-desktop
   kdePackages.kdenlive
   mangohud
+  neovim
   gpu-screen-recorder-gtk
   lutris
   heroic

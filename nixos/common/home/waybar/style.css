@@ -1,7 +1,19 @@
+/*******************************************************************************
+ * WAYBAR STYLESHEET
+ ******************************************************************************/
+
+/*******************************************************************************
+ * GLOBAL
+ ******************************************************************************/
+
 * {
     font-family: "Ubuntu NF";
     font-size: 12px;
 }
+
+/*******************************************************************************
+ * WINDOW
+ ******************************************************************************/
 
 window#waybar {
     background-color: #1d1d2d;
@@ -13,6 +25,10 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
+/*******************************************************************************
+ * BUTTONS
+ ******************************************************************************/
+
 button {
     box-shadow: none;
     border: none;
@@ -23,20 +39,14 @@ button:hover {
     background: inherit;
 }
 
-/* Hover modules */
-#pulseaudio:hover,
-#cpu:hover,
-#memory:hover,
-#disk:hover {
-    background-color: #313244;
-    color: #89b4fa;
-}
+/*******************************************************************************
+ * WORKSPACES
+ ******************************************************************************/
 
-/* Workspaces */
 #workspaces button {
     background-color: #313244;
     color: #89b4fa;
-    margin: 4px 2px ; 
+    margin: 4px 2px;
     padding: 3px 6px;
     border-radius: 6px;
     min-width: 30px;
@@ -55,7 +65,6 @@ button:hover {
 #workspaces button.focused {
     color: #89b4fa;
     background-color: #313244;
-
 }
 
 #workspaces button.urgent {
@@ -63,9 +72,9 @@ button:hover {
     color: #1d1d2d;
 }
 
-#mode {
-    background-color: #64727D;
-}
+/*******************************************************************************
+ * MODULE DEFAULTS
+ ******************************************************************************/
 
 #clock,
 #cpu,
@@ -75,41 +84,88 @@ button:hover {
 #tray,
 #mode,
 #window {
-    margin: 4px 2px; /* increases spacing around modules */
+    margin: 4px 2px;
     padding: 3px 8px;
     border-radius: 6px;
 }
 
-/* Individual modules */
+/*******************************************************************************
+ * INDIVIDUAL MODULES
+ ******************************************************************************/
+
+/* ==============================
+ * Clock
+ * ============================== */
+
 #clock {
     background-color: #89b4fa;
     color: #1d1d2d;
 }
+
+/* ==============================
+ * CPU
+ * ============================== */
 
 #cpu {
     background-color: #89dceb;
     color: #1d1d2d;
 }
 
+#cpu:hover {
+    background-color: #313244;
+    color: #89b4fa;
+}
+
+/* ==============================
+ * Memory
+ * ============================== */
+
 #memory {
     background-color: #a6e3a1;
     color: #1d1d2d;
 }
+
+#memory:hover {
+    background-color: #313244;
+    color: #89b4fa;
+}
+
+/* ==============================
+ * Disk
+ * ============================== */
 
 #disk {
     background-color: #fec7cd;
     color: #1d1d2d;
 }
 
+#disk:hover {
+    background-color: #313244;
+    color: #89b4fa;
+}
+
+/* ==============================
+ * Audio
+ * ============================== */
+
 #pulseaudio {
     background-color: #f9e2af;
     color: #000000;
+}
+
+#pulseaudio:hover {
+    background-color: #313244;
+    color: #89b4fa;
 }
 
 #pulseaudio.muted {
     background-color: #585b70;
     color: #cdd6f4;
 }
+
+/* ==============================
+ * System Tray
+ * ============================== */
 
 #tray {
     background-color: #1d1d2d;
@@ -123,6 +179,18 @@ button:hover {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
 }
+
+/* ==============================
+ * Mode
+ * ============================== */
+
+#mode {
+    background-color: #64727D;
+}
+
+/*******************************************************************************
+ * MISCELLANEOUS
+ ******************************************************************************/
 
 label:focus {
     background-color: #000000;

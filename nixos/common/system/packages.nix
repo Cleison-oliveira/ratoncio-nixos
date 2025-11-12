@@ -26,6 +26,7 @@
       unzip
       p7zip
       unrar
+      zip
       gzip
       bzip2
       xz
@@ -39,9 +40,6 @@
       luarocks-nix
       tree-sitter
       lua-language-server
-
-      # Text Editor
-      neovim
 
       # Multimedia
       ffmpeg-full

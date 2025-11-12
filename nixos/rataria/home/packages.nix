@@ -6,6 +6,7 @@ with pkgs;
   gimp3
   discord
   vscodium
+  neovim
   telegram-desktop
   kdePackages.kdenlive
   onlyoffice-desktopeditors
