@@ -1,4 +1,4 @@
-{ pkgs, unstable, inputs, ... }: {
+{ pkgs, unstable, inputs, ... }: with pkgs; {
 
   imports = [
     ../common/hardware
@@ -14,6 +14,8 @@
           ./users
           inputs.home-manager.nixosModules.home-manager
         ];
+
+        boot.kernelPackages = linuxPackages_zen;
 
         networking = {
           hostName = "gaming";

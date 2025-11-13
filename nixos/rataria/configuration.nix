@@ -1,4 +1,4 @@
-{ pkgs, unstable, inputs, ... }: {
+{ pkgs, unstable, inputs, ... }: with pkgs; {
 
   imports = [
     ../common
@@ -8,7 +8,7 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-
+  boot.kernelPackages = linuxPackages_latest;
 
   networking = {
     hostName = "rataria";

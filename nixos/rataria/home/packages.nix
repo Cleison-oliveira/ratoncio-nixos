@@ -7,6 +7,7 @@ with pkgs;
   discord
   vscodium
   neovim
+
   telegram-desktop
   kdePackages.kdenlive
   onlyoffice-desktopeditors

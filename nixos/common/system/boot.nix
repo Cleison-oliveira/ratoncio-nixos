@@ -1,4 +1,4 @@
-{ pkgs, ... }: with pkgs; {
+{ ... }: {
   boot = {
     kernelParams = [
       "pcie_aspm=off"
@@ -27,8 +27,6 @@
     consoleLogLevel = 3;
 
     extraModulePackages = [ ];
-
-    kernelPackages = linuxPackages_latest;
 
     kernel = {
       sysctl = {

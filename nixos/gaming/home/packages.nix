@@ -9,7 +9,6 @@ with pkgs; [
   neovim
   gpu-screen-recorder-gtk
   lutris
-  heroic
   rpcs3
   pcsx2
   dolphin-emu
@@ -20,4 +19,5 @@ with pkgs; [
 ] ++ (with unstable; [
   lsfg-vk-ui
   lsfg-vk
+  heroic
 ])
