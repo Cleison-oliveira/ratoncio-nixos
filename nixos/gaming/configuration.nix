@@ -27,7 +27,7 @@
           backupFileExtension = "backup";
 
           users = {
-            steam = import ./home/steam.nix {
+            steam = import ../../home/steam {
               inherit inputs pkgs unstable;
               config = { };
             };

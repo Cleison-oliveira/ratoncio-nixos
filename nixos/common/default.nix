@@ -5,6 +5,5 @@
     ./programs
     ./services
     ./system
-    ./themes
   ];
 }

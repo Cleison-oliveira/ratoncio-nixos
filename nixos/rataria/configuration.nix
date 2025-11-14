@@ -20,7 +20,7 @@
     backupFileExtension = "backup";
 
     users = {
-      ratoncio = import ./home/ratoncio.nix {
+      ratoncio = import ../../home/ratoncio {
         inherit inputs pkgs unstable;
         config = { };
       };

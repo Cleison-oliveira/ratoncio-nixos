@@ -7,16 +7,17 @@ with pkgs;
   discord
   vscodium
   neovim
-
   telegram-desktop
   kdePackages.kdenlive
+  evince
+  gpu-screen-recorder-gtk
   onlyoffice-desktopeditors
   xsel
+  keet
   nixd
   nixfmt-rfc-style
   nixpkgs-fmt
   chromium
-  keet
   keepassxc
   simple-scan
   hplip

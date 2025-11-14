@@ -45,23 +45,10 @@
       ffmpeg-full
       yt-dlp
       mpv
-      feh
 
       # Audio tools
       pulsemixer
       pulseaudio
-
-      # Qt / KDE / Theming
-      qt5.qtbase
-      qt6.qtbase
-      qt6Packages.qt6ct
-      libsForQt5.qt5ct
-      kdePackages.qtstyleplugin-kvantum
-      libsForQt5.qtstyleplugin-kvantum
-      kdePackages.okular
-      adwaita-icon-theme
-      hicolor-icon-theme
-      kdePackages.breeze-icons
 
       # System integration utilities
       glib
