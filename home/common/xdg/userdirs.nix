@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   xdg = {
     userDirs = {
       enable = true;
@@ -13,4 +13,7 @@
       videos = "\$HOME/Videos";
     };
   };
+  home.packages = with pkgs; [
+    xdg-utils
+  ];
 }

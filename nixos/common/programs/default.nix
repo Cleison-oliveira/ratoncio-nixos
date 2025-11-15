@@ -1,7 +1,8 @@
 { ... }: {
   imports = [
     ./bash.nix
+    ./firejail.nix
     ./fish.nix
-    ./git.nix
+    ./thunar.nix
   ];
 }

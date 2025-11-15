@@ -1,11 +1,4 @@
 { ... }: {
-
-  programs = {
-    firejail = {
-      enable = true;
-    };
-  };
-
   security = {
     rtkit = {
       enable = true;

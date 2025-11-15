@@ -1,11 +1,12 @@
 { ... }: {
   imports = [
     ./dconf
-    ./firejail
-    ./hypr
+    ./hyprland
+    ./packages
+    ./programs
     ./rofi
+    ./theme
     ./waybar
     ./xdg
-    ./theme
   ];
 }

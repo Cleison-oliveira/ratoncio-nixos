@@ -1,12 +1,13 @@
 { ... }: {
   imports = [
     ./boot.nix
+    ./documentation.nix
     ./environment.nix
     ./fonts.nix
-    ./gc.nix
     ./groups.nix
     ./locale.nix
     ./network.nix
+    ./nix.nix
     ./packages.nix
     ./packages.nix
     ./security.nix

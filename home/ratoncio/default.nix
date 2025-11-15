@@ -1,5 +1,4 @@
 { pkgs, unstable, ... }: {
-
   imports = [
     ../common
   ];
@@ -10,13 +9,6 @@
     stateVersion = "25.05";
     packages = import ./packages.nix { inherit pkgs unstable; };
     sessionVariables = { };
-  };
-
-  programs = {
-    git = {
-      userName = "Cleison-oliveira";
-      userEmail = "cleisonao59@gmail.com";
-    };
   };
 
   services = {

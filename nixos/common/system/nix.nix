@@ -1,4 +1,11 @@
 { ... }: {
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowBroken = false;
+    };
+  };
+
   nix = {
     gc = {
       automatic = true;
@@ -11,6 +18,7 @@
     };
 
     settings = {
+      allowed-users = [ "@wheel" ];
       auto-optimise-store = true;
       sandbox = true;
     };

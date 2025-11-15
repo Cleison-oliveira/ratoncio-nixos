@@ -1,5 +1,4 @@
 { ... }: {
-
   xdg = {
     configFile = {
       "mimeapps.list".force = true;
@@ -48,7 +47,7 @@
           "inode/directory" = [ thunar ];
           "text/html" = [ chromium ];
           "text/markdown" = [ codium neovim ];
-          "text/plain" = [ codium neovim ];
+          "text/plain" = [ neovim codium ];
           "text/uri-list" = [ chromium ];
           "video/mp4" = [ mpv ];
           "video/ogg" = [ mpv ];
@@ -94,7 +93,7 @@
           "inode/directory" = [ thunar ];
           "text/html" = [ chromium ];
           "text/markdown" = [ codium neovim ];
-          "text/plain" = [ codium neovim ];
+          "text/plain" = [ neovim codium ];
           "text/uri-list" = [ chromium ];
           "video/mp4" = [ mpv ];
           "video/ogg" = [ mpv ];

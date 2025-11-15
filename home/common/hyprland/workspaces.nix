@@ -1,0 +1,18 @@
+[
+  "workspace 1,class:^(librewolf)$"
+  "workspace 1,class:^(chromium-browser)$"
+  "workspace 2,class:^(org.telegram.desktop)$"
+  "workspace 2,class:^(pear-runtime)$"
+  "workspace 2,class:^(forkgram)$"
+  "workspace 2,class:^(discord)$"
+  "workspace 3,class:^(codium)$"
+  "workspace 4,class:^(org.kde.okular)$"
+  "workspace 5,class:^(gimp)$"
+  "workspace 5,class:^(krita)$"
+  "workspace 5,class:^(org.inkscape.Inkscape)$"
+  "workspace 6,class:^(org.kde.kdenlive)$"
+  "workspace 8,class:^(steamwebhelper)$"
+  "workspace 8,class:^(steam)$"
+  "workspace 8,class:^(heroic)$"
+  "workspace 9,class:^(steam_app_0)$"
+]

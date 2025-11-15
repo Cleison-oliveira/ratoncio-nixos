@@ -1,5 +1,4 @@
-{ pkgs, ... }: with pkgs;
-{
+{ pkgs, ... }: with pkgs; {
   hardware = {
     enableAllFirmware = true;
     graphics = {
