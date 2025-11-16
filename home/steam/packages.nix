@@ -1,6 +1,4 @@
-{ pkgs, unstable, ... }:
-
-with pkgs; [
+{ pkgs, unstable, ... }: with pkgs; [
   mangohud
   lutris
   rpcs3
