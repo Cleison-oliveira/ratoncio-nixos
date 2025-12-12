@@ -6,7 +6,7 @@
   home = {
     username = "steam";
     homeDirectory = "/home/steam";
-    stateVersion = "25.05";
+    stateVersion = "25.11";
     packages = import ./packages.nix { inherit pkgs unstable; };
   };
 
@@ -15,7 +15,7 @@
       enable = true;
       settings = {
         preload = [ "${./wallpaper.png}" ];
-        wallpaper = [ "DP-3,${./wallpaper.png}" ];
+        wallpaper = [ "DP-2,DP-3,${./wallpaper.png}" ];
       };
     };
   };

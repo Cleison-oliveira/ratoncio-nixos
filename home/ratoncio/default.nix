@@ -6,7 +6,7 @@
   home = {
     username = "ratoncio";
     homeDirectory = "/home/ratoncio";
-    stateVersion = "25.05";
+    stateVersion = "25.11";
     packages = import ./packages.nix { inherit pkgs unstable; };
     sessionVariables = { };
   };
@@ -16,7 +16,10 @@
       enable = true;
       settings = {
         preload = [ "${./wallpaper.png}" ];
-        wallpaper = [ "DP-3,${./wallpaper.png}" ];
+        wallpaper = [ 
+          "DP-2,${./wallpaper.png}" 
+          "DP-3,${./wallpaper.png}" 
+        ];
       };
     };
   };

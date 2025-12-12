@@ -1,4 +1,4 @@
-{ modulesPath, lib, ... }: {
+{ modulesPath, ... }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     ./graphics.nix
@@ -8,9 +8,4 @@
     ./processor.nix
     ./swapdevices.nix
   ];
-
-  networking = {
-    useDHCP = lib.mkDefault true;
-    #interfaces.eno1.useDHCP = lib.mkDefault true;
-  };
 }

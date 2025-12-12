@@ -2,7 +2,7 @@ let
   classes = {
     qtTools = "^(qt5ct|qt6ct)$";
     dialogs = "^(xdg-desktop-portal-gtk|polkit-gnome-authentication-agent-1|lxpolkit|polkit-kde-authentication-agent-1|org.kde.polkit-kde-authentication-agent-1|qalculate-gtk|gnome-calculator|mate-calc|copyq|clipman)$";
-    telegram = "^\\.telegram-desktop-wrapped$";
+    telegram = "^\\.Telegram-wrapped$";
     dolphin = "^(dolphin-emu)$";
     kdenlive = "^(kdenlive|org.kde.kdenlive)$";
     thunar = "^(thunar)$";

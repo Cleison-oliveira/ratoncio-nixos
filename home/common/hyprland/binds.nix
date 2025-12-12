@@ -11,7 +11,7 @@
   # Kill applications
   "$mainMod CTRL,S,exec,killall steam"
   "$mainMod CTRL,D,exec,killall discord"
-  "$mainMod CTRL,T,exec,killall telegram-desktop"
+  "$mainMod CTRL,T,exec,killall Telegram"
   "$mainMod CTRL,K,exec,pkill -3 pear-runtime"
 
   # Window management

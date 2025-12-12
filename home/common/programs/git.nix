@@ -2,8 +2,12 @@
   programs = {
     git = {
       enable = true;
-      userName = "cleison-oliveira";
-      userEmail = "cleisonao59@gmail.com";
+      settings = {
+        user = { 
+          name = "cleison-oliveira";
+          email = "cleisonao59@gmail.com";
+        };
+      };
     };
   };
 }

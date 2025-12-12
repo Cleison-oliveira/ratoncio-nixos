@@ -3,7 +3,7 @@
     rofi = {
       enable = true;
       theme = "catppuccin-mocha";
-      package = rofi-wayland;
+      package = rofi;
       extraConfig = {
         modi = "drun,window";
         disable-history = true;

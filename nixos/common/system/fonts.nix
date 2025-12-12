@@ -9,9 +9,11 @@
       liberation_ttf
       noto-fonts
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       powerline-fonts
       corefonts
+      roboto
+      fira-code
       powerline-symbols
       nerd-fonts.adwaita-mono
       nerd-fonts.jetbrains-mono

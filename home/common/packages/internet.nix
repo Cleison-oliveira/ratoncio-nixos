@@ -2,8 +2,8 @@
   home = {
     packages = [
       discord
-      telegram-desktop
       chromium
+      telegram-desktop
     ];
   };
 }

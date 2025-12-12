@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
     ./firejail.nix
+    ./foot.nix
     ./fzf.nix
     ./git.nix
     ./htop.nix

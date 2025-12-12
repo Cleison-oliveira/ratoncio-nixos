@@ -12,6 +12,7 @@
   hplip
   freerdp
   remmina
+  prismlauncher
 ]
 ++ (with unstable; [
   wasabiwallet
