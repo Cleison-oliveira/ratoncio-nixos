@@ -1,8 +1,9 @@
 { pkgs, ... }: with pkgs; {
   home = {
-    packages = [
-      kdePackages.qtstyleplugin-kvantum
-      kdePackages.breeze-icons
+    packages = with kdePackages; [
+      qtstyleplugin-kvantum
+      breeze-icons
+      kdenlive
     ];
   };
 }

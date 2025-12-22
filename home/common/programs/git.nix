@@ -3,7 +3,7 @@
     git = {
       enable = true;
       settings = {
-        user = { 
+        user = {
           name = "cleison-oliveira";
           email = "cleisonao59@gmail.com";
         };

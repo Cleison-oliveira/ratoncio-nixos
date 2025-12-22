@@ -29,6 +29,7 @@
   "$mainMod,right,movefocus,r"
   "$mainMod,up,movefocus,u"
   "$mainMod,down,movefocus,d"
+  "Alt, Tab,cyclenext, bringactivetotop"
 
   # Move windows
   "$mainMod SHIFT,left,movewindow,l"
@@ -71,9 +72,8 @@
   "$mainMod SHIFT,P,exec,xfce4-terminal -e pulsemixer"
 
   # Screenshot
-
-  "CTRL, F12, exec, grim - | wl-copy"
-  "CTRL_SHIFT, F12, exec, grim $imgPath"
+  "CTRL, F12, exec, grim -o \"$(hyprctl activeworkspace -j | jq -r '.monitor')\" - | wl-copy"
+  "CTRL_SHIFT, F12, exec, grim -o \"$(hyprctl activeworkspace -j | jq -r '.monitor')\" $imgPath"
   "SUPER, F12, exec, grim -g \"$(slurp)\" - | wl-copy"
   "SHIFT, F12, exec, grim -g \"$(slurp)\" $imgPath"
 ]

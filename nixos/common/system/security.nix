@@ -15,7 +15,7 @@
 
     protectKernelImage = true;
 
-    wrappers = { 
+    wrappers = {
       gsr-kms-server = {
         owner = "root";
         group = "root";

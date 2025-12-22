@@ -1,4 +1,4 @@
-{ pkgs, unstable, ... }: with pkgs; [
+{ pkgs, ... }: with pkgs; [
   krita
   inkscape
   gimp3
@@ -13,7 +13,5 @@
   freerdp
   remmina
   prismlauncher
-]
-++ (with unstable; [
   wasabiwallet
-])
+]

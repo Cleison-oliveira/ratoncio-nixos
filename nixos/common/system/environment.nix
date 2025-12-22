@@ -7,7 +7,7 @@
       EDITOR = "nvim";
       GTK_USE_PORTAL = "1";
       TERMINAL = "xfce4-terminal";
-      KRITA_NO_STYLE_OVERRIDE=1;
+      KRITA_NO_STYLE_OVERRIDE = 1;
       XFCE_TERMINAL = "xfce4-terminal";
       GTK_THEME = "catppuccin-mocha-blue-standard";
 

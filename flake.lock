@@ -7,48 +7,31 @@
         ]
       },
       "locked": {
-        "lastModified": 1764776959,
-        "narHash": "sha256-d+5CGloq7Lo1u2SkzhF8oiOdUc6Z5emh22nTXUB9CFA=",
+        "lastModified": 1765823531,
+        "narHash": "sha256-tyNJjd48hfgsyEfsq1Ueufg4oJv6b8xBA6NYRJrLPyg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e1680d594a9281651cbf7d126941a8c8e2396183",
+        "rev": "8315c1544f383b791a3115c9959d1f27920e8320",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "release-25.11",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "nix-unstable": {
-      "locked": {
-        "lastModified": 1764517877,
-        "narHash": "sha256-pp3uT4hHijIC8JUK5MEqeAWmParJrgBVzHLNfJDZxg4=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "2d293cbfa5a793b4c50d17c05ef9e385b90edf6c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1764522689,
-        "narHash": "sha256-SqUuBFjhl/kpDiVaKLQBoD8TLD+/cTUzzgVFoaHrkqY=",
+        "lastModified": 1765472234,
+        "narHash": "sha256-9VvC20PJPsleGMewwcWYKGzDIyjckEz8uWmT0vCDYK0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8bb5646e0bed5dbd3ab08c7a7cc15b75ab4e1d0f",
+        "rev": "2fbfb1d73d239d2402a8fe03963e37aab15abe8b",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-25.11",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -60,11 +43,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765485871,
-        "narHash": "sha256-dv1Rqh4H/zClAM1LhFt70a5Z0OkOsT9q45zlVqFv/No=",
+        "lastModified": 1765675278,
+        "narHash": "sha256-GSa/jaWld+WKxt39DDBPoX1j+kCdNmFF9stTWbeVhp8=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "2d551b7c9475c86a0ccef0447cfc830390d301bb",
+        "rev": "7d795256de6dbe7b4044161af2b6002421bdb188",
         "type": "github"
       },
       "original": {
@@ -76,7 +59,6 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nix-unstable": "nix-unstable",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia"
       }

@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, ... }: {
   environment = {
     systemPackages = with pkgs; [
       wget
@@ -11,7 +11,7 @@
       appimage-run
       glib
       apparmor-utils
-      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+      ddcutil
     ];
   };
 }

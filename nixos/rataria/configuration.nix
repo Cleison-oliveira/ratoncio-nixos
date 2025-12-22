@@ -1,4 +1,4 @@
-{ pkgs, unstable, inputs, ... }: with pkgs; {
+{ pkgs, inputs, ... }: with pkgs; {
 
   imports = [
     ../common
@@ -21,7 +21,7 @@
 
     users = {
       ratoncio = import ../../home/ratoncio {
-        inherit inputs pkgs unstable;
+        inherit inputs pkgs;
         config = { };
       };
     };

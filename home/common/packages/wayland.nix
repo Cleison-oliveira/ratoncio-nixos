@@ -3,6 +3,7 @@
     packages = [
       wl-clipboard
       grim
+      quickshell
       slurp
     ];
   };

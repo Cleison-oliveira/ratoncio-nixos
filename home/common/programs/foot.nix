@@ -10,10 +10,9 @@
           font = "JetBrains Mono NF:size=12";
         };
 
-
         cursor = {
           style = "block";
-          blink = "yes";
+          blink = "no";
           beam-thickness = "1.5";
         };
 

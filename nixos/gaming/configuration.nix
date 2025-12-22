@@ -1,4 +1,4 @@
-{ pkgs, unstable, inputs, ... }: with pkgs; {
+{ pkgs, inputs, ... }: with pkgs; {
 
   imports = [
     ../common/hardware
@@ -28,7 +28,7 @@
 
           users = {
             steam = import ../../home/steam {
-              inherit inputs pkgs unstable;
+              inherit inputs pkgs;
               config = { };
             };
           };

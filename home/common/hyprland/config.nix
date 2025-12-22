@@ -14,7 +14,7 @@
           "$mainMod" = "SUPER";
           "$terminal" = "foot";
           "$fileManager" = "thunar";
-          "$menu" = "rofi -show drun";
+          "$menu" = "qs -c noctalia-shell ipc call launcher toggle";
           "$firegram" = "firejail --profile=$HOME/.firejail/telegram.profile";
           "$firebase" = "firejail --profile=$HOME/.firejail/base.profile";
 
@@ -31,7 +31,7 @@
 
           exec-once = [
             "hyprpaper &"
-            "sleep 2 && waybar"
+            "noctalia-shell"
             "thunar --daemon"
           ];
 
@@ -49,91 +49,91 @@
             resize_on_border = true;
             allow_tearing = false;
             layout = "dwindle";
-            };
-
-            decoration = {
-              rounding = 10;
-              rounding_power = 6;
-              active_opacity = 1.0;
-              inactive_opacity = 1.0;
-
-              shadow = {
-                enabled = true;
-                range = 4;
-                render_power = 3;
-                color = "rgba(1a1a1aee)";
-              };
-
-              blur = {
-                enabled = true;
-                size = 3;
-                passes = 1;
-                vibrancy = 0.1696;
-              };
-            };
-
-            xwayland = {
-              force_zero_scaling = true;
-            };
-
-            input = {
-              kb_layout = "us";
-              kb_options = "compose:ralt";
-              follow_mouse = 1;
-              sensitivity = 0;
-
-              touchpad = {
-                natural_scroll = false;
-              };
-            };
-
-            device = {
-              name = "epic-mouse-v1";
-              sensitivity = -0.5;
-            };
-
-            animations = import ./animations.nix;
-
-            dwindle = {
-              pseudotile = true;
-              preserve_split = true;
-            };
-
-            master = {
-              new_status = "master";
-            };
-
-            bind = import ./binds.nix;
-
-            bindel = [
-              ",XF86AudioRaiseVolume,exec,wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-              ",XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-              ",XF86AudioMute,exec,wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-              ",XF86AudioMicMute,exec,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-              ",XF86MonBrightnessUp,exec,brightnessctl -e4 -n2 set 5%+"
-              ",XF86MonBrightnessDown,exec,brightnessctl -e4 -n2 set 5%-"
-            ];
-
-            bindl = [
-              ",XF86AudioNext,exec,playerctl next"
-              ",XF86AudioPause,exec,playerctl play-pause"
-              ",XF86AudioPlay,exec,playerctl play-pause"
-              ",XF86AudioPrev,exec,playerctl previous"
-            ];
-
-            bindm = [
-              "$mainMod,mouse:272,movewindow"
-              "$mainMod,mouse:273,resizewindow"
-            ];
-
-            windowrule = [
-              "suppressevent maximize,class:.*"
-              "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-            ];
-
-            windowrulev2 = import ./workspaces.nix;
           };
+
+          decoration = {
+            rounding = 8;
+            rounding_power = 6;
+            active_opacity = 1.0;
+            inactive_opacity = 1.0;
+
+            shadow = {
+              enabled = true;
+              range = 4;
+              render_power = 3;
+              color = "rgba(1a1a1aee)";
+            };
+
+            blur = {
+              enabled = true;
+              size = 3;
+              passes = 1;
+              vibrancy = 0.1696;
+            };
+          };
+
+          xwayland = {
+            force_zero_scaling = true;
+          };
+
+          input = {
+            kb_layout = "us";
+            kb_options = "compose:ralt";
+            follow_mouse = 1;
+            sensitivity = 0;
+
+            touchpad = {
+              natural_scroll = false;
+            };
+          };
+
+          device = {
+            name = "epic-mouse-v1";
+            sensitivity = -0.5;
+          };
+
+          animations = import ./animations.nix;
+
+          dwindle = {
+            pseudotile = true;
+            preserve_split = true;
+          };
+
+          master = {
+            new_status = "master";
+          };
+
+          bind = import ./binds.nix;
+
+          bindel = [
+            ",XF86AudioRaiseVolume,exec,wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+            ",XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+            ",XF86AudioMute,exec,wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+            ",XF86AudioMicMute,exec,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+            ",XF86MonBrightnessUp,exec,brightnessctl -e4 -n2 set 5%+"
+            ",XF86MonBrightnessDown,exec,brightnessctl -e4 -n2 set 5%-"
+          ];
+
+          bindl = [
+            ",XF86AudioNext,exec,playerctl next"
+            ",XF86AudioPause,exec,playerctl play-pause"
+            ",XF86AudioPlay,exec,playerctl play-pause"
+            ",XF86AudioPrev,exec,playerctl previous"
+          ];
+
+          bindm = [
+            "$mainMod,mouse:272,movewindow"
+            "$mainMod,mouse:273,resizewindow"
+          ];
+
+          windowrule = [
+            "suppressevent maximize,class:.*"
+            "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+          ];
+
+          windowrulev2 = import ./workspaces.nix ++ import ./windowRules.nix;
         };
       };
     };
-  }
+  };
+}

@@ -10,6 +10,7 @@
     kernelModules = [
       "kvm-amd"
       "tun"
+      "i2c-dev"
     ];
 
     initrd = {
@@ -46,7 +47,3 @@
     };
   };
 }
-
-
-
-

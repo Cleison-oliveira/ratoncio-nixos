@@ -5,6 +5,5 @@
     ./gvfs.nix
     ./pipewire.nix
     ./tumbler.nix
-    ./xserver.nix
   ];
 }

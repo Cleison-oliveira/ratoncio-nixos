@@ -3,8 +3,8 @@
     useDHCP = false;
     defaultGateway = "192.168.1.1";
     interfaces = {
-      eno1 = { 
-        ipv4 = { 
+      eno1 = {
+        ipv4 = {
           addresses = [
             {
               address = "192.168.1.10";
@@ -12,7 +12,7 @@
             }
           ];
         };
-        ipv6 = { 
+        ipv6 = {
           addresses = [
             {
               address = "fe80::206:c161:463a:4a63";

@@ -10,6 +10,8 @@
     };
   };
 
+  hardware.i2c.enable = true;
+
   users = {
     users = {
       ratoncio = {
@@ -29,6 +31,7 @@
           "video"
           "scanner"
           "lp"
+          "i2c"
           "shareddata"
         ];
         hashedPassword = "$6$4jahjQj8GmEKllbZ$qDP2NqWQ3R4XzU8C66S8dWp1hGFW4QdSL1biKndyp.O31yvhvZWJbKYGEUwVfOa6UWYgWsjDPItsQNhbeTK3N1";

@@ -1,4 +1,4 @@
-{ pkgs, unstable, ... }: with pkgs; [
+{ pkgs, ... }: with pkgs; [
   mangohud
   lutris
   rpcs3
@@ -8,8 +8,7 @@
   steam-run
   mangojuice
   vulkan-tools
-] ++ (with unstable; [
   lsfg-vk-ui
   lsfg-vk
   heroic
-])
+]

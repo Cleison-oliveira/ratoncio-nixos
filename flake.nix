@@ -3,48 +3,30 @@
 
   inputs = {
 
-    nix-unstable = {
+    nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
-
     };
 
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-25.11";
+      inputs = { nixpkgs.follows = "nixpkgs"; };
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager";
       inputs = { nixpkgs.follows = "nixpkgs"; };
     };
   };
 
-  outputs = inputs@{ nix-unstable, nixpkgs, ... }:
-
-  let
-    system = "x86_64-linux";
-
-    unstable = import nix-unstable {
-      inherit system;
-      config = {
-        allowUnfree = true;
-      };
-    };
-  in
-
+  outputs = inputs@{ nixpkgs, ... }:
   {
     nixosConfigurations = {
       rataria = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs unstable; };
+        specialArgs = { inherit inputs; };
         modules = [
           ./nixos
         ];
-};
+      };
     };
   };
 }

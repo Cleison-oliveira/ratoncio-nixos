@@ -2,11 +2,10 @@
   imports = [
     ./dconf
     ./hyprland
+    ./noctalia
     ./packages
     ./programs
-    ./rofi
     ./theme
-    ./waybar
     ./xdg
   ];
 }
