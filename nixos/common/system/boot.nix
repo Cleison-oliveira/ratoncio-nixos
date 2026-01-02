@@ -5,6 +5,8 @@
       "quiet"
       "udev.log_level=3"
       "video=efifb:1920x1080"
+      "nvidia-drm.modeset=1"
+      "nvidia-drm.fbdev=1"
     ];
 
     kernelModules = [
@@ -21,8 +23,14 @@
         "usbhid"
         "usb_storage"
         "sd_mod"
+
       ];
-      kernelModules = [ ];
+      kernelModules = [
+        "nvidia"
+        "nvidia_modeset"
+        "nvidia_uvm"
+        "nvidia_drm"
+      ];
     };
 
     consoleLogLevel = 3;

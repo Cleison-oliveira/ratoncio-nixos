@@ -11,12 +11,6 @@
     options = [ "fmask=0077" "dmask=0077" ];
   };
 
-  fileSystems."/mnt/ratfiles" = {
-    device = "UUID=0ebebcab-68fa-4687-9a09-a7e320c4d14c";
-    fsType = "ext4";
-    options = [ "defaults" "auto" ];
-  };
-
   fileSystems."/mnt/emulation" = {
     device = "UUID=0cca1578-a07c-4a70-b5e8-1097ffe1261e";
     fsType = "xfs";

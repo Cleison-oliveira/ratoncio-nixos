@@ -12,6 +12,8 @@
       glib
       apparmor-utils
       ddcutil
+      cudaPackages.cudatoolkit
+      cudaPackages.cudnn
     ];
   };
 }

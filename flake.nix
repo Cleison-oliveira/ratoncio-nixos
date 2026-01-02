@@ -19,14 +19,14 @@
   };
 
   outputs = inputs@{ nixpkgs, ... }:
-  {
-    nixosConfigurations = {
-      rataria = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./nixos
-        ];
+    {
+      nixosConfigurations = {
+        rataria = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./nixos
+          ];
+        };
       };
     };
-  };
 }
