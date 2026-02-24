@@ -1,7 +1,0 @@
-{ ... }: {
-  services = {
-    tumbler = {
-      enable = true;
-    };
-  };
-}

@@ -1,6 +1,5 @@
 { ... }: {
   imports = [
-    ./gaming
-    ./rataria
+    ./configuration.nix
   ];
 }

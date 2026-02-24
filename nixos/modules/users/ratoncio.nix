@@ -1,0 +1,25 @@
+{ pkgs, ... }:
+{
+  users.users.ratoncio = {
+    isNormalUser = true;
+    shell = pkgs.fish;
+    description = "ratoncio";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "allowusers"
+      "libvirtd"
+      "docker"
+      "gamemode"
+      "kvm"
+      "input"
+      "audio"
+      "render"
+      "video"
+      "scanner"
+      "lp"
+      "i2c"
+    ];
+    hashedPassword = "$6$4jahjQj8GmEKllbZ$qDP2NqWQ3R4XzU8C66S8dWp1hGFW4QdSL1biKndyp.O31yvhvZWJbKYGEUwVfOa6UWYgWsjDPItsQNhbeTK3N1";
+  };
+}

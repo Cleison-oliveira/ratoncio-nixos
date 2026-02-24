@@ -1,31 +1,21 @@
-{ pkgs, inputs, ... }: {
+{ inputs, ... }:
+{
   imports = [
-    ../common
-    inputs.noctalia.homeModules.default
+    ../modules
+    inputs.nix-flatpak.homeManagerModules.nix-flatpak
   ];
-
-  xdg.configFile."quickshell/noctalia-shell".source =
-    "${inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default}/share/noctalia-shell";
 
   home = {
     username = "ratoncio";
     homeDirectory = "/home/ratoncio";
     stateVersion = "26.05";
-    packages = import ./packages.nix { inherit pkgs; };
-    sessionVariables = { };
+    sessionVariables = {
+      KRITA_NO_STYLE_OVERRIDE = "1";
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+      PAGER = "less";
 
-  };
-
-  services = {
-    hyprpaper = {
-      enable = true;
-      settings = {
-        preload = [ "${./wallpaper.png}" ];
-        wallpaper = [
-          "DP-2,${./wallpaper.png}"
-          "DP-3,${./wallpaper.png}"
-        ];
-      };
+      _JAVA_AWT_WM_NONREPARENTING = "1";
     };
   };
 }
