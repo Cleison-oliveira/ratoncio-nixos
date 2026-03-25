@@ -1,38 +1,29 @@
+# DO-NOT-EDIT. This file was auto-generated using github:vic/flake-file.
+# Use `nix run .#write-flake` to regenerate it.
 {
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
+
   inputs = {
-    nix-flatpak = {
-      url = "github:gmodena/nix-flatpak";
-    };
-
-    nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
-    };
-
+    comfyui-nix.url = "github:utensils/comfyui-nix";
+    flake-file.url = "github:vic/flake-file";
+    flake-parts.url = "github:hercules-ci/flake-parts";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nix-cachyos-kernel = {
-      url = "github:xddxdd/nix-cachyos-kernel/release";
+    import-tree.url = "github:vic/import-tree";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
-
-  outputs =
-    inputs @ { nixpkgs, nix-cachyos-kernel, home-manager, ... }: {
-      nixosConfigurations.rataria = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./nixos
-          home-manager.nixosModules.home-manager
-          ({ ... }: {
-            nixpkgs.overlays = [
-              nix-cachyos-kernel.overlays.pinned
-            ];
-          })
-        ];
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
       };
     };
-  }
+  };
+}

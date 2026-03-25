@@ -1,4 +1,0 @@
-{ ... }:
-{
-  services.tumbler.enable = true;
-}
