@@ -1,9 +1,5 @@
-{inputs, ...}: {
+{
   flake.modules.homeManager.desktop-plasma = {lib, ...}: {
-    imports = [
-      inputs.self.modules.homeManager.plasma-manager
-    ];
-
     programs.plasma = {
       configFile = {
         "dolphinrc" = {
@@ -74,7 +70,7 @@
             Number.value = 4;
           };
 
-          "NightColor" = {"Active" = true;};
+          #"NightColor" = {"Active" = false;};
           "Plugins" = {"shakecursorEnabled" = false;};
           "Xwayland" = {"Scale" = 1;};
         };

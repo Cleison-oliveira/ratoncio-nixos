@@ -8,38 +8,37 @@
       "ratoncio"
     ];
   in {
-    homeConfigurations = lib.mkMerge [
-      (builtins.map (username: self.lib.mkHomeManager "x86_64-linux" "${username}") users)
-    ];
+    homeConfigurations = lib.genAttrs users (username: self.lib.mkHomeManager "x86_64-linux" username);
 
     modules = lib.mkMerge (
-      builtins.map (
-        username: (lib.mkMerge [
+      map
+      (username:
+        lib.mkMerge [
           (self.factory.user "${username}" true)
           {
             nixos."${username}" = {
               users.users."${username}".initialHashedPassword = "$6$4jahjQj8GmEKllbZ$qDP2NqWQ3R4XzU8C66S8dWp1hGFW4QdSL1biKndyp.O31yvhvZWJbKYGEUwVfOa6UWYgWsjDPItsQNhbeTK3N1";
             };
 
-            homeManager."${username}" = {pkgs, ...}: {
+            homeManager."${username}" = {...}: {
               imports = with self.modules.homeManager; [
-                cli-nixvim
-                cli-fish
-                cli-htop
-                cli-git
-                cli-programming
-
                 desktop-plasma
-                desktop-xdg
                 desktop-yt-dlp
                 gaming-basic
+                #gaming-minecraft-server
+                gaming-steam
+
+                services-flatpak
+
+                system-cli
+                system-default
+                system-desktop
+                system-minimal
               ];
-              home.packages = with pkgs; [
-              ];
+              home.packages = [];
             };
           }
         ])
-      )
       users
     );
   };

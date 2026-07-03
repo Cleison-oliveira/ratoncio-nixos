@@ -13,7 +13,6 @@
           PROTON_PREFER_SDL = true;
           SDL_AUDIODRIVER = "pipewire";
           SDL_VIDEODRIVER = "wayland";
-          PRESSURE_VESSEL_IMPORT_OPENXR_1_RUNTIMES = true;
         };
       };
       remotePlay.openFirewall = true;
@@ -25,5 +24,32 @@
     services.udev.extraRules = ''
       KERNEL=="ntsync", MODE="0644"
     '';
+  };
+  flake.modules.homeManager.gaming-steam = {
+    pkgs,
+    config,
+    ...
+  }: {
+    systemd.user.paths.steam-sweep = {
+      Unit = {
+        Description = "Monitor creation of Steam desktop shortcuts";
+      };
+      Install = {
+        WantedBy = ["default.target"];
+      };
+      Path = {
+        PathChanged = "${config.home.homeDirectory}/.local/share/applications";
+      };
+    };
+
+    systemd.user.services.steam-sweep = {
+      Unit = {
+        Description = "Remove Steam game .desktop shortcuts";
+      };
+      Service = {
+        Type = "oneshot";
+        ExecStart = "${pkgs.findutils}/bin/find ${config.home.homeDirectory}/.local/share/applications/ -type f -name '*.desktop' -exec ${pkgs.gnugrep}/bin/grep -l 'Exec=steam steam://rungameid/' {} \\; -delete";
+      };
+    };
   };
 }

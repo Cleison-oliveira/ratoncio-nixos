@@ -13,7 +13,9 @@
     };
     import-tree.url = "github:vic/import-tree";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-rpcs3-pr.url = "github:nixos/nixpkgs/pull/518285/head";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";

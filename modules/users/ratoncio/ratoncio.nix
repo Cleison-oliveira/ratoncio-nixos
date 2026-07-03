@@ -1,8 +1,4 @@
-{
-  self,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   flake.modules = lib.mkMerge [
     {
       homeManager.ratoncio = {pkgs, ...}:
@@ -23,6 +19,7 @@
             gnutar
             gzip
             libarchive
+            p7zip
             unar
             unrar
             unzip
@@ -37,6 +34,7 @@
             jq
             tree
             wget
+            tesseract
           ];
 
           hardware = [
@@ -58,6 +56,8 @@
           ];
 
           graphics = with pkgs; [
+            blender
+            davinci-resolve
             gimp3
             inkscape
             krita
@@ -68,8 +68,6 @@
             discord
             freerdp
             google-chrome
-            keet
-            librewolf
             qbittorrent
             telegram-desktop
           ];
@@ -80,14 +78,16 @@
             ffmpeg-full
             gpu-screen-recorder-gtk
             haruna
-            pulseaudio
-            pulsemixer
+
+            tonelib-metal
+            lsp-plugins
+            neural-amp-modeler-lv2
           ];
 
           utilities = with pkgs; [
             keepassxc-wrapped
-            vscodium
             wasabiwallet
+            opencode-desktop
           ];
 
           all =
@@ -101,8 +101,12 @@
             ++ multimedia
             ++ utilities;
         in {
-          home.stateVersion = "26.05";
           home.packages = all;
+          home.sessionVariables = {
+            EDITOR = "nvim";
+            VISUAL = "nvim";
+            NIXPKGS_ALLOW_UNFREE = 1;
+          };
           programs.git.settings.user = {
             name = "cleison-oliveira";
             email = "cleisonao59@gmail.com";

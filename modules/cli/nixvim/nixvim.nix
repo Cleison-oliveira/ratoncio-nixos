@@ -1,13 +1,12 @@
 {inputs, ...}: {
   flake.modules.homeManager.cli-nixvim = {
     imports = [inputs.nixvim.homeModules.nixvim];
+
     programs.nixvim = {
       enable = true;
+      nixpkgs.source = inputs.nixpkgs;
 
-      extraLuaPackages = luaPkgs:
-        with luaPkgs; [
-          jsregexp
-        ];
+      extraLuaPackages = luaPkgs: with luaPkgs; [jsregexp];
 
       globals = {
         mapleader = " ";
@@ -21,8 +20,8 @@
         expandtab = true;
         autoindent = true;
         smartindent = true;
+        termguicolors = true;
         background = "dark";
-        termguicolors = false;
       };
 
       clipboard = {
@@ -30,46 +29,16 @@
         providers.wl-copy.enable = true;
       };
 
-      colorschemes.catppuccin = {
-        enable = true;
-        settings = {
-          flavor = "macchiato";
-          transparent_background = true;
-        };
-      };
-
-      highlight = {
-        Normal = {bg = "none";};
-        NormalFloat = {bg = "none";};
-        NormalNC = {bg = "none";};
-        LineNr = {bg = "none";};
-        SignColumn = {bg = "none";};
-        EndOfBuffer = {bg = "none";};
-        VertSplit = {bg = "none";};
-        WinSeparator = {bg = "none";};
-        Folded = {bg = "none";};
-        NeoTreeNormal = {bg = "none";};
-        NeoTreeNormalNC = {bg = "none";};
-        NeoTreeEndOfBuffer = {bg = "none";};
-        TelescopeNormal = {bg = "none";};
-        TelescopeBorder = {bg = "none";};
-      };
-
       plugins = {
         web-devicons.enable = true;
-
         lualine = {
           enable = true;
           settings.options.theme = "auto";
         };
-
         neo-tree = {
           enable = true;
-          settings = {
-            close_if_last_window = true;
-          };
+          settings.close_if_last_window = true;
         };
-
         telescope = {
           enable = true;
           keymaps = {
@@ -77,7 +46,6 @@
             "<leader>fg" = "live_grep";
           };
         };
-
         treesitter = {
           enable = true;
           settings = {
@@ -85,9 +53,7 @@
             indent.enable = true;
           };
         };
-
         luasnip.enable = true;
-
         cmp = {
           enable = true;
           settings = {
@@ -103,7 +69,6 @@
             ];
           };
         };
-
         lsp = {
           enable = true;
           keymaps.lspBuf = {
@@ -123,7 +88,6 @@
             };
           };
         };
-
         conform-nvim = {
           enable = true;
           settings = {
@@ -131,61 +95,16 @@
               lsp_fallback = true;
               timeout_ms = 500;
             };
-            formatters_by_ft = {
-              nix = ["alejandra"];
-            };
+            formatters_by_ft.nix = ["alejandra"];
           };
         };
       };
-
-      keymaps = [
-        {
-          mode = "v";
-          key = "y";
-          action = "\"+y";
-          options.silent = true;
-        }
-        {
-          mode = "v";
-          key = "p";
-          action = "\"+p";
-          options.silent = true;
-        }
-        {
-          mode = ["n" "v"];
-          key = "<C-a>";
-          action = "ggVG";
-          options.silent = true;
-        }
-        {
-          mode = "n";
-          key = "<C-n>";
-          action = "<cmd>Neotree filesystem reveal left<CR>";
-        }
-        {
-          mode = ["n" "v"];
-          key = "<Leader>i";
-          action = "<cmd>lua if vim.fn.mode() == 'v' or vim.fn.mode() == 'V' then vim.cmd('normal! =') else vim.cmd('normal! gg=G') end<CR>";
-          options.silent = true;
-        }
-      ];
 
       autoCmd = [
         {
           event = ["FileType"];
           pattern = ["nix"];
-          callback = {
-            __raw = ''
-              function(ev)
-                vim.bo[ev.buf].shiftwidth = 2
-                vim.bo[ev.buf].tabstop = 2
-                vim.bo[ev.buf].softtabstop = 2
-                vim.bo[ev.buf].expandtab = true
-                vim.bo[ev.buf].autoindent = true
-                vim.bo[ev.buf].smartindent = true
-              end
-            '';
-          };
+          command = "setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab autoindent smartindent";
         }
       ];
     };

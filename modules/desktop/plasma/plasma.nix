@@ -1,10 +1,13 @@
-{inputs, ...}: {
+{
+  inputs,
+  lib,
+  ...
+}: {
   flake.modules.nixos.desktop-plasma = {pkgs, ...}: {
     services = {
       desktopManager.plasma6.enable = true;
-      displayManager.sddm = {
+      displayManager.plasma-login-manager = {
         enable = true;
-        wayland.enable = true;
       };
     };
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
@@ -21,6 +24,16 @@
       enable = true;
       immutableByDefault = true;
       overrideConfig = false;
+
+      krunner = {
+        position = "center";
+      };
+
+      configFile.kdeglobals = {
+        KDE = {
+          AnimationDurationFactor = 0.3;
+        };
+      };
 
       desktop = {
         icons = {
@@ -52,7 +65,7 @@
         };
 
         nightLight = {
-          enable = true;
+          enable = false;
           mode = "times";
           temperature.night = 4500;
           transitionTime = 30;
@@ -81,7 +94,27 @@
           ];
         };
       };
+      powerdevil = {
+        AC = {
+          turnOffDisplay = {
+            idleTimeout = "never";
+          };
+          autoSuspend = {
+            action = "nothing";
+          };
+        };
+
+        battery = {
+          turnOffDisplay = {
+            idleTimeout = "never";
+          };
+          autoSuspend = {
+            action = "nothing";
+          };
+        };
+      };
     };
+
     home.packages = with pkgs.kdePackages; [
       breeze-icons
       elisa

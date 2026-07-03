@@ -11,7 +11,6 @@
     };
   in {
     home.packages = with pkgs; [
-      clonehero
       dolphin-emu
       faugus-launcher
       heroic
@@ -21,9 +20,9 @@
       pcsx2-wrapped
       prismlauncher
       protonup-qt
-      rpcs3
       steam-run
       umu-launcher
+      gamescope
     ];
   };
 }

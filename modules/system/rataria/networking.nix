@@ -13,7 +13,6 @@
             ipv4 = {
               method = "manual";
               address1 = "192.168.1.10/24,192.168.1.1";
-              dns = "1.1.1.1;8.8.8.8;";
             };
           };
         };
@@ -24,7 +23,7 @@
         checkReversePath = "loose";
         allowedTCPPorts = [27036 27037 25565];
         allowedUDPPorts = [44857 27031 27036];
-        allowPing = false;
+        allowPing = true;
       };
     };
 
@@ -33,8 +32,9 @@
       nssmdns4 = true;
       openFirewall = true;
     };
+
     environment.systemPackages = with pkgs; [
-      protonvpn-gui
+      wireguard-tools
     ];
   };
 }

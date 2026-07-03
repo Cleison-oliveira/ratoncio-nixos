@@ -16,7 +16,6 @@
       fira-code
       powerline-symbols
       nerd-fonts.adwaita-mono
-      nerd-fonts.jetbrains-mono
     ];
   };
 }

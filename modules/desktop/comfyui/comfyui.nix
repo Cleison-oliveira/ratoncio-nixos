@@ -3,7 +3,6 @@
     imports = [
       inputs.comfyui-nix.nixosModules.default
     ];
-
     services.comfyui = {
       enable = true;
       gpuSupport = "cuda";

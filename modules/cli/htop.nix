@@ -3,6 +3,7 @@
     programs.htop = {
       enable = true;
       settings = {
+        color_scheme = 0;
         hide_kernel_threads = true;
         hide_threads = true;
         hide_userland_threads = true;

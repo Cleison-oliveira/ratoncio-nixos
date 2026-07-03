@@ -1,19 +1,12 @@
-{inputs, ...}: {
+{
   flake.modules.homeManager.desktop-plasma = {
-    config,
-    lib,
-    pkgs,
-    ...
-  }: {
-    imports = [
-      inputs.self.modules.homeManager.plasma-manager
-    ];
-
     programs.plasma = {
       shortcuts = {
+        "services/org.kde.krunner.desktop"."_launch" = ["Alt+Space" "Search"];
+
         "kwin" = {
           "Kill Window" = "Meta+Ctrl+Esc";
-          "Overview" = "Meta+W";
+          "Overview" = "Meta+A";
           "Switch One Desktop Down" = "Meta+Ctrl+Down";
           "Switch One Desktop Up" = "Meta+Ctrl+Up";
           "Switch One Desktop to the Left" = "Meta+Ctrl+Left";

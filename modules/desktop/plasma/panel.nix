@@ -1,32 +1,27 @@
-{inputs, ...}: {
+{
   flake.modules.homeManager.desktop-plasma = {
-    config,
-    lib,
-    pkgs,
-    ...
-  }: {
-    imports = [
-      inputs.self.modules.homeManager.plasma-manager
-    ];
-
     programs.plasma = let
       commonPanelProps = {
-        floating = true;
-        height = 46;
-        hiding = "dodgewindows";
+        floating = false;
+        height = 45;
+        hiding = "normalpanel";
         location = "bottom";
         opacity = "adaptive";
       };
 
       leftWidgets = [
+        #"org.kde.plasma.marginsseparator"
         {
           name = "org.kde.plasma.kickoff";
           config.General = {
+            icon = "nix-snowflake-white";
             alphaSort = true;
             systemFavorites = "suspend,reboot,shutdown";
           };
         }
-        "org.kde.plasma.marginsseparator"
+      ];
+
+      centerWidgets = [
         {
           iconTasks = {
             appearance.iconSpacing = "small";
@@ -35,12 +30,31 @@
               "applications:google-chrome.desktop"
               "applications:org.kde.konsole.desktop"
               "applications:codium.desktop"
+              "applications:org.telegram.desktop.desktop"
+              "applications:davinci-resolve.desktop"
             ];
           };
         }
       ];
 
-      centerWidgets = [
+      rightWidgets = [
+        {
+          systemTray = {
+            icons = {
+              spacing = "small";
+              scaleToFit = false;
+            };
+            items = {
+              hidden = [
+                "org.kde.plasma.devicenotifier"
+                "org.kde.kscreen"
+                "org.kde.plasma.keyboardlayout"
+                "org.kde.plasma.battery"
+                "org.kde.plasma.notifications"
+              ];
+            };
+          };
+        }
         {
           name = "org.kde.plasma.digitalclock";
           config.Appearance = {
@@ -60,25 +74,7 @@
             enabledCalendarPlugins = "holidaysevents,astronomicalevents";
           };
         }
-      ];
-
-      rightWidgets = [
-        {
-          systemTray = {
-            icons = {
-              spacing = "small";
-            };
-            items = {
-              hidden = [
-                "org.kde.plasma.devicenotifier"
-                "org.kde.kscreen"
-                "org.kde.plasma.keyboardlayout"
-                "org.kde.plasma.battery"
-                "org.kde.plasma.notifications"
-              ];
-            };
-          };
-        }
+        "org.kde.plasma.marginsseparator"
         "org.kde.plasma.showdesktop"
       ];
     in {

@@ -20,6 +20,7 @@
       ];
 
       initrd = {
+        systemd.enable = true;
         verbose = false;
         availableKernelModules = [
           "nvme"
