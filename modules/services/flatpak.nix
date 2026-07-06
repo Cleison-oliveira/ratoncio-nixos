@@ -26,6 +26,7 @@
         }) [
           "io.keet.Keet"
           "net.rpcs3.RPCS3"
+          "net.pcsx2.PCSX2"
         ];
 
       update = {
