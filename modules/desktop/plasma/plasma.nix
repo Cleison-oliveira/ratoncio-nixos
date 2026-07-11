@@ -29,6 +29,17 @@
         position = "center";
       };
 
+      input.keyboard = {
+        layouts = [
+          {
+            layout = "us";
+          }
+        ];
+        options = [
+          "compose:ralt"
+        ];
+      };
+
       configFile.kdeglobals = {
         KDE = {
           AnimationDurationFactor = 0.3;
@@ -130,6 +141,7 @@
 
     home = {
       pointerCursor = {
+        enable = true;
         name = "breeze_cursors";
         package = pkgs.kdePackages.breeze;
         size = 24;

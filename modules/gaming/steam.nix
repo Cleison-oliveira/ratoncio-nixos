@@ -11,6 +11,8 @@
           PROTON_USE_WOW64 = true;
           PROTON_ENABLE_WAYLAND = true;
           PROTON_PREFER_SDL = true;
+          PROTON_DXVK_LOWLATENCY = true;
+          LOW_LATENCY_LAYER = true;
           SDL_AUDIODRIVER = "pipewire";
           SDL_VIDEODRIVER = "wayland";
         };

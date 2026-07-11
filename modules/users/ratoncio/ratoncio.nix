@@ -65,9 +65,9 @@
           ];
 
           internet = with pkgs; [
-            discord
             freerdp
             google-chrome
+            firefox
             qbittorrent
             telegram-desktop
           ];

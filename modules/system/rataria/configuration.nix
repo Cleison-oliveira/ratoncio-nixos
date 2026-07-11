@@ -33,10 +33,9 @@
       ];
 
     #boot.kernelPackages = pkgs.linuxPackages_latest;
-    boot.kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.${pkgs.stdenv.hostPlatform.system}.linuxPackages-cachyos-lts-lto-zen4;
+    boot.kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.${pkgs.stdenv.hostPlatform.system}.linuxPackages-cachyos-latest-lto-zen4;
     networking.hostName = "rataria";
     powerManagement.cpuFreqGovernor = "performance";
-    #hardware.opentabletdriver.enable = true;
 
     hardware.i2c.enable = true;
     hardware.sane = {
@@ -45,12 +44,6 @@
         hplip
         hplipWithPlugin
       ];
-    };
-
-    services.xserver.xkb = {
-      layout = "us";
-      variant = "";
-      options = "compose:ralt";
     };
   };
 }

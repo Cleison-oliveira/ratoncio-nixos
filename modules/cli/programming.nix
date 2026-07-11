@@ -8,7 +8,10 @@
       lua51Packages.jsregexp
       lua5_1
       luarocks-nix
-      (python311.withPackages (ps: with ps; [pynvim]))
+      (python311.withPackages (ps:
+        with ps; [
+          pynvim
+        ]))
       R
       clang-tools
       lua-language-server

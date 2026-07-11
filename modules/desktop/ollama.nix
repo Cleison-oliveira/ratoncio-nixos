@@ -2,7 +2,7 @@
   flake.modules.nixos.desktop-ollama = {pkgs, ...}: {
     services = {
       open-webui = {
-        enable = true;
+        enable = false;
         port = 8080;
         environment = {
           OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
