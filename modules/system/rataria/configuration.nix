@@ -19,6 +19,7 @@
         desktop-comfyui
         services-docker
         nvidia
+        sane
 
         system-cli
         system-default
@@ -32,18 +33,10 @@
         (modulesPath + "/installer/scan/not-detected.nix")
       ];
 
-    #boot.kernelPackages = pkgs.linuxPackages_latest;
     boot.kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.${pkgs.stdenv.hostPlatform.system}.linuxPackages-cachyos-latest-lto-zen4;
     networking.hostName = "rataria";
     powerManagement.cpuFreqGovernor = "performance";
 
     hardware.i2c.enable = true;
-    hardware.sane = {
-      enable = true;
-      extraBackends = with pkgs; [
-        hplip
-        hplipWithPlugin
-      ];
-    };
   };
 }
