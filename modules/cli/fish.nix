@@ -13,6 +13,18 @@
   flake.modules.homeManager.cli-fish = {pkgs, ...}: {
     programs.fish = {
       enable = true;
+
+      /*
+        functions = {
+        todavinci = {
+          body = ''
+            set name (string replace -r '\.[^.]+$' "" $argv[1])
+            ffmpeg -i $argv[1] -c:v dnxhd -profile:v dnxhr_sq -pix_fmt yuv422p -c:a pcm_s16le "$name-resolve.mov"
+          '';
+        };
+      };
+      */
+
       shellAliases = {
         trim = "doas fstrim -v /";
         calc = "R --silent";

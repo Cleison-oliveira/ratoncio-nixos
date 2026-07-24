@@ -24,6 +24,7 @@
               imports = with self.modules.homeManager; [
                 desktop-plasma
                 desktop-yt-dlp
+                desktop-todavinci
                 gaming-basic
                 #gaming-minecraft-server
                 gaming-steam

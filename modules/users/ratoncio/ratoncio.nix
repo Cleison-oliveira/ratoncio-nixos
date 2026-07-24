@@ -65,6 +65,7 @@
           ];
 
           internet = with pkgs; [
+            discord
             freerdp
             google-chrome
             firefox
@@ -78,7 +79,6 @@
             ffmpeg-full
             gpu-screen-recorder-gtk
             haruna
-
             tonelib-metal
             lsp-plugins
             neural-amp-modeler-lv2
