@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.nvidia = {
+  flake.modules.nixos.hardware-nvidia = {
     config,
     pkgs,
     ...
@@ -48,6 +48,23 @@
     environment.sessionVariables = {
       __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     };
+
     services.xserver.videoDrivers = ["nvidia"];
+
+    boot = {
+      kernelParams = [
+        "nvidia-drm.modeset=1"
+        "nvidia-drm.fbdev=1"
+      ];
+
+      initrd = {
+        kernelModules = [
+          "nvidia"
+          "nvidia_modeset"
+          "nvidia_uvm"
+          "nvidia_drm"
+        ];
+      };
+    };
   };
 }

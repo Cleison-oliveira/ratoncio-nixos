@@ -86,7 +86,6 @@
 
           utilities = with pkgs; [
             keepassxc-wrapped
-            wasabiwallet
             opencode-desktop
           ];
 

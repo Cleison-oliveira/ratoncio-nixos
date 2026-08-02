@@ -1,5 +1,9 @@
 {
-  flake.modules.nixos.desktop-ollama = {pkgs, ...}: {
+  flake.modules.nixos.desktop-ollama = {
+    pkgs,
+    pkgs-stable,
+    ...
+  }: {
     services = {
       open-webui = {
         enable = false;
@@ -11,7 +15,7 @@
       };
       ollama = {
         enable = true;
-        package = pkgs.ollama-cuda;
+        package = pkgs-stable.ollama-cuda;
         loadModels = ["qwen3.5:27b" "gemma4:e4b" "codestral:22b"];
         environmentVariables = {
           OLLAMA_MAX_MODELS = "1";

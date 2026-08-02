@@ -25,6 +25,7 @@
                 desktop-plasma
                 desktop-yt-dlp
                 desktop-todavinci
+                desktop-wasabi
                 gaming-basic
                 #gaming-minecraft-server
                 gaming-steam

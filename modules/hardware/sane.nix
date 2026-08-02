@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.sane = {pkgs, ...}: {
+  flake.modules.nixos.hardware-sane = {pkgs, ...}: {
     hardware.sane = {
       enable = true;
       extraBackends = with pkgs; [

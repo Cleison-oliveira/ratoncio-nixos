@@ -6,17 +6,12 @@
         "splash"
         "rd.systemd.show_status=false"
         "udev.log_level=3"
-        "nvidia-drm.modeset=1"
-        "nvidia-drm.fbdev=1"
       ];
 
       kernelModules = [
         "kvm-amd"
         "ntsync"
         "tun"
-        "i2c-dev"
-        "i2c-i801"
-        "i2c-nvidia-gpu"
       ];
 
       initrd = {
@@ -29,12 +24,6 @@
           "usbhid"
           "usb_storage"
           "sd_mod"
-        ];
-        kernelModules = [
-          "nvidia"
-          "nvidia_modeset"
-          "nvidia_uvm"
-          "nvidia_drm"
         ];
       };
 

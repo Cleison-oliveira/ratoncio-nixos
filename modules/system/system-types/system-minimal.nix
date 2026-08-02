@@ -1,9 +1,20 @@
 {
   flake-file.inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
   };
 
   flake.modules.nixos.system-minimal = {
+    config,
+    pkgs,
+    inputs,
+    ...
+  }: {
+    _module.args.pkgs-stable = import inputs.nixpkgs-stable {
+      inherit (pkgs.stdenv.hostPlatform) system;
+      config.allowUnfree = true;
+    };
+
     nixpkgs.config.allowUnfree = true;
     system.stateVersion = "26.05";
 
@@ -43,7 +54,18 @@
       };
     };
   };
-  flake.modules.homeManager.system-minimal = {config, ...}: {
+
+  flake.modules.homeManager.system-minimal = {
+    config,
+    pkgs,
+    inputs,
+    ...
+  }: {
+    _module.args.pkgs-stable = import inputs.nixpkgs-stable {
+      inherit (pkgs.stdenv.hostPlatform) system;
+      config.allowUnfree = true;
+    };
+
     home.homeDirectory = "/home/${config.home.username}";
     home.stateVersion = "26.05";
   };
