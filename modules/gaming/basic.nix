@@ -5,14 +5,13 @@
       dolphin-emu
       faugus-launcher
       heroic
-      lsfg-vk
-      lsfg-vk-ui
       mangohud
       prismlauncher
       protonup-qt
       steam-run
       umu-launcher
       gamescope
+      rpcs3
     ];
   };
 }

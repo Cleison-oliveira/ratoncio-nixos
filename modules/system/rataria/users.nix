@@ -29,6 +29,9 @@
                 gaming-basic
                 #gaming-minecraft-server
                 gaming-steam
+                gaming-lsfgvk
+                gaming-pcsx2
+                gaming-rpcs3
 
                 services-flatpak
 

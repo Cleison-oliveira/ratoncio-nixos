@@ -1,5 +1,6 @@
 {inputs, ...}: {
   flake.modules.nixos.desktop-comfyui = {
+    disabledModules = ["services/misc/comfyui.nix"];
     imports = [
       inputs.comfyui-nix.nixosModules.default
     ];

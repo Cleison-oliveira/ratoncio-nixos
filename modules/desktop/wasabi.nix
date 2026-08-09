@@ -25,6 +25,10 @@
       libice
       libsm
       zlib
+      libxcursor
+      libxrandr
+      libxi
+      libxext
     ];
 
     desktopItem = pkgs.makeDesktopItem {
@@ -38,8 +42,7 @@
     };
 
     wasabiwallet = pkgs.stdenv.mkDerivation {
-      inherit pname version src desktopItem; # <- desktopItem precisa estar aqui pra virar $desktopItem no builder
-
+      inherit pname version src desktopItem;
       dontBuild = true;
 
       nativeBuildInputs = with pkgs; [
