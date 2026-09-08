@@ -22,6 +22,7 @@
 
             homeManager."${username}" = {...}: {
               imports = with self.modules.homeManager; [
+                desktop-dte
                 desktop-plasma
                 desktop-yt-dlp
                 desktop-todavinci

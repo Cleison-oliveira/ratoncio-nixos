@@ -7,7 +7,6 @@
           MANGOHUD = true;
           GAMEMODERUN = "1";
           ENABLE_VKBASALT = false;
-          PROTON_USE_NTSYNC = true;
           PROTON_USE_WOW64 = true;
           PROTON_ENABLE_WAYLAND = true;
           PROTON_PREFER_SDL = true;

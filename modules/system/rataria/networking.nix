@@ -21,8 +21,8 @@
       firewall = {
         enable = true;
         checkReversePath = "loose";
-        allowedTCPPorts = [27036 27037 25565];
-        allowedUDPPorts = [44857 27031 27036];
+        allowedTCPPorts = [27036 27037 25565 2626 55435];
+        allowedUDPPorts = [44857 27031 27036 2626 55435];
         allowPing = true;
       };
     };

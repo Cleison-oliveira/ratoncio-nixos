@@ -4,9 +4,8 @@
     lib,
     ...
   }: let
-    pcsx2NightlyTag = "v2.7.518";
-
-    pcsx2PatchesRev = "9b193aa0a61f5e93d3bd4124b111e8f296ef9fa8";
+    pcsx2NightlyTag = "v2.7.524";
+    pcsx2PatchesRev = "6ed7b62cf1d7dacf11e9bf64e193934e899808d0";
 
     pcsx2Src = pkgs.fetchFromGitHub {
       name = "pcsx2-source";
@@ -14,14 +13,14 @@
       repo = "pcsx2";
       tag = pcsx2NightlyTag;
       leaveDotGit = true;
-      hash = "sha256-nWTO7pySJD9Kjp437pclKAp+Su5/DlR43trr14jQzgY=";
+      hash = "sha256-ZxkdRV0qrnPUTz7msDoDFC0QY4IjaxEXLE1XWyedc2I=";
     };
 
     pcsx2Patches = pkgs.fetchFromGitHub {
       owner = "PCSX2";
       repo = "pcsx2_patches";
       rev = pcsx2PatchesRev;
-      hash = "sha256-1hhdjFxJCNfeO/FIAnjRHESfiyzkErYddZqpRxzG7VQ=";
+      hash = "sha256-FvqX9BVm0wIB0OCZR79INzGfUiSs3DOMMO2RzSNAU3s=";
     };
 
     rapidyamlVersion = "0.9.0";
@@ -45,7 +44,7 @@
       ];
 
       meta = {
-        description = "Rapid YAML parser/emitter (ryml) — dependência do PCSX2 nightly ainda não empacotada no nixpkgs";
+        description = "Rapid YAML parser/emitter (ryml)";
         homepage = "https://github.com/biojppm/rapidyaml";
         license = lib.licenses.mit;
         platforms = lib.platforms.unix;
@@ -87,31 +86,34 @@
       ];
 
       buildInputs = with pkgs; [
-        sdl3
+        alsa-lib
         cubeb
         curl
-        ffmpeg
-        libxrandr
+        ffmpeg_6
+        kddockwidgets
+        kdePackages.plasma-integration
         libaio
         libbacktrace
         libpcap
+        libpulseaudio
         libwebp
+        libxrandr
         lz4
+        pipewire
+        plutosvg
+        plutovg
         qtbase
         qtsvg
         qttools
         qtwayland
+        rapidyaml
+        sdl3
         shaderc
         soundtouch
         vulkan-headers
         vulkan-loader
         wayland
         zstd
-        plutovg
-        plutosvg
-        kddockwidgets
-        rapidyaml
-        kdePackages.plasma-integration
       ];
 
       strictDeps = true;
@@ -125,8 +127,11 @@
 
       qtWrapperArgs = let
         libs = lib.makeLibraryPath [
-          pkgs.vulkan-loader
+          pkgs.alsa-lib
+          pkgs.libpulseaudio
+          pkgs.pipewire
           pkgs.shaderc
+          pkgs.vulkan-loader
         ];
       in [
         "--prefix LD_LIBRARY_PATH : ${libs}"

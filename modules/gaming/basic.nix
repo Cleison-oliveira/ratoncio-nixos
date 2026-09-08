@@ -1,17 +1,18 @@
 {
-  flake.modules.homeManager.gaming-basic = {pkgs, ...}: let
-  in {
+  flake.modules.homeManager.gaming-basic = {
+    pkgs,
+    pkgs-stable,
+    ...
+  }: {
     home.packages = with pkgs; [
-      dolphin-emu
-      faugus-launcher
       heroic
       mangohud
       prismlauncher
       protonup-qt
       steam-run
+      steam-rom-manager
       umu-launcher
       gamescope
-      rpcs3
     ];
   };
 }

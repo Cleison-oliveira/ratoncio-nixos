@@ -30,14 +30,12 @@
             origin = "flathub";
           }) [
             "io.keet.Keet"
-            "net.rpcs3.RPCS3"
-            "org.freedesktop.Platform.VulkanLayer.lsfgvk//25.08"
-            "org.freedesktop.Platform.VulkanLayer.lsfgvk//24.08"
+            "org.DolphinEmu.dolphin-emu"
           ]
         )
         ++ [
           {
-            appId = "net.pcsx2.PCSX2";
+            appId = "net.davidotek.pupgui2";
             origin = "flathub-beta";
           }
         ];
