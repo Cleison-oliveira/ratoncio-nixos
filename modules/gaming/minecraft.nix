@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.gaming-minecraft-server = {pkgs, ...}: {
+  flake.modules.homeManager.gaming-minecraft = {pkgs, ...}: {
     systemd.user.services = {
       playit = {
         Unit = {
@@ -9,7 +9,7 @@
           Restart = "always";
           RestartSec = "10s";
 
-          EnvironmentFile = "%h/.playit-secret";
+          EnvironmentFile = "-%h/.playit-secret";
           Environment = "PATH=/run/wrappers/bin:/run/current-system/sw/bin:/usr/bin:/bin";
 
           ExecStartPre = [

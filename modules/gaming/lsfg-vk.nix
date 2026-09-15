@@ -1,30 +1,26 @@
 {
-  flake.modules.homeManager.gaming-lsfgvk = {
+  flake.modules.homeManager.gaming-lsfg-vk = {
     pkgs,
     lib,
     ...
   }: let
-    lsfgRev = "218820e8dc2d69c21a7a0775b5c47f2c447ed31a";
-    lsfgDevVersion = "2.0.0-dev26+${builtins.substring 0 7 lsfgRev}";
+    lsfgVersion = "2.0.0";
 
-    lsfgSrc = pkgs.fetchFromGitHub {
-      owner = "PancakeTAS";
-      repo = "lsfg-vk";
-      rev = lsfgRev;
-      fetchSubmodules = true;
-      hash = "sha256-Qb3vufCzNpM1r+vgo8M9nnA7CENgGTithWG0oXqLKbI=";
+    lsfgSrc = pkgs.fetchurl {
+      url = "https://git.lsfg-vk.dev/lsfg-vk/snapshot/lsfg-vk-${lsfgVersion}.tar.xz";
+      hash = "sha256-q7aI/qwA1Q+eWdq7JHaZi8HT8CkPuXFAfUnLom3USzs=";
     };
 
     commonMeta = {
-      homepage = "https://github.com/PancakeTAS/lsfg-vk/";
-      changelog = "https://github.com/PancakeTAS/lsfg-vk/commit/${lsfgRev}";
+      homepage = "https://codeberg.org/PancakeTAS/lsfg-vk";
+      changelog = "https://git.lsfg-vk.dev/lsfg-vk/tag/?h=${lsfgVersion}";
       license = lib.licenses.mit;
       platforms = ["x86_64-linux"];
     };
 
     lsfgVk = pkgs.llvmPackages.stdenv.mkDerivation {
       pname = "lsfg-vk";
-      version = lsfgDevVersion;
+      version = lsfgVersion;
       src = lsfgSrc;
 
       nativeBuildInputs = with pkgs; [
@@ -40,10 +36,10 @@
 
       cmakeFlags = [
         "-DCMAKE_BUILD_TYPE=Release"
-        "-DLSFGVK_BUILD_VK_LAYER=ON"
+        "-DLSFGVK_BUILD_LAYER=ON"
         "-DLSFGVK_BUILD_CLI=ON"
         "-DLSFGVK_BUILD_UI=OFF"
-        "-DLSFGVK_INSTALL_XDG_FILES=OFF"
+        "-DLSFGVK_MANAGED=ON"
       ];
 
       preConfigure = ''
@@ -53,14 +49,14 @@
       meta =
         commonMeta
         // {
-          description = "Vulkan layer + CLI for frame generation (dev/2.0.0 pré-release, via wrapper)";
+          description = "Vulkan layer + CLI for frame generation";
           mainProgram = "lsfg-vk-cli";
         };
     };
 
     lsfgVkUi = pkgs.llvmPackages.stdenv.mkDerivation {
       pname = "lsfg-vk-ui";
-      version = lsfgDevVersion;
+      version = lsfgVersion;
       src = lsfgSrc;
 
       nativeBuildInputs = with pkgs; [
@@ -79,16 +75,16 @@
 
       cmakeFlags = [
         "-DCMAKE_BUILD_TYPE=Release"
-        "-DLSFGVK_BUILD_VK_LAYER=OFF"
+        "-DLSFGVK_BUILD_LAYER=OFF"
         "-DLSFGVK_BUILD_CLI=OFF"
         "-DLSFGVK_BUILD_UI=ON"
-        "-DLSFGVK_INSTALL_XDG_FILES=ON"
+        "-DLSFGVK_MANAGED=ON"
       ];
 
       meta =
         commonMeta
         // {
-          description = "Graphical configuration interface for lsfg-vk (dev/2.0.0 pré-release, via wrapper)";
+          description = "Graphical configuration interface for lsfg-vk";
           mainProgram = "lsfg-vk-ui";
         };
     };

@@ -8,7 +8,7 @@
       "ratoncio"
     ];
   in {
-    homeConfigurations = lib.genAttrs users (username: self.lib.mkHomeManager "x86_64-linux" username);
+    homeConfigurations = lib.mkMerge (map (username: self.lib.mkHomeManager "x86_64-linux" username) users);
 
     modules = lib.mkMerge (
       map
@@ -23,14 +23,15 @@
             homeManager."${username}" = {...}: {
               imports = with self.modules.homeManager; [
                 desktop-dte
+                desktop-upscaler
                 desktop-plasma
                 desktop-yt-dlp
                 desktop-todavinci
                 desktop-wasabi
                 gaming-basic
-                #gaming-minecraft-server
+                #gaming-minecraft
                 gaming-steam
-                gaming-lsfgvk
+                gaming-lsfg-vk
                 gaming-pcsx2
                 gaming-rpcs3
 

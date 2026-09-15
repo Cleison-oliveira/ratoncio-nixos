@@ -11,6 +11,7 @@
 
       systemd-boot
       security
+      performance
       virtualisation
       zram
     ];

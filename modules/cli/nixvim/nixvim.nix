@@ -1,6 +1,6 @@
 {inputs, ...}: {
   flake.modules.homeManager.cli-nixvim = {
-    imports = [inputs.nixvim.homeModules.nixvim];
+    imports = [inputs.self.modules.homeManager.nixvim];
 
     programs.nixvim = {
       enable = true;

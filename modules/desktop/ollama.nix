@@ -22,7 +22,6 @@
           OLLAMA_KEEP_ALIVE = "5m";
         };
       };
-      tailscale.enable = true;
     };
   };
 }

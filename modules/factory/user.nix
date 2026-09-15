@@ -15,7 +15,6 @@
           ]
           ++ [
             "networkmanager"
-            "allowusers"
             "libvirtd"
             "docker"
             "gamemode"

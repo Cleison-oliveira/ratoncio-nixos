@@ -87,6 +87,7 @@
           utilities = with pkgs; [
             keepassxc-wrapped
             opencode-desktop
+            antigravity-ide
           ];
 
           all =

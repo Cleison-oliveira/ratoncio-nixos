@@ -1,7 +1,10 @@
 {
   flake.modules.nixos.security = {pkgs, ...}: {
     security = {
-      pam.services.sddm.enableKwallet = true;
+      pam.services = {
+        sddm.enableKwallet = true;
+        plasmalogin.enableKwallet = true;
+      };
       rtkit.enable = true;
       sudo.enable = false;
       doas.enable = true;

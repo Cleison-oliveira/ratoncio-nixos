@@ -1,5 +1,5 @@
-{pkgs, ...}: {
-  flake.modules.nixos.performance = {
+{
+  flake.modules.nixos.performance = {pkgs, ...}: {
     services.ananicy = {
       enable = true;
       package = pkgs.ananicy-cpp;

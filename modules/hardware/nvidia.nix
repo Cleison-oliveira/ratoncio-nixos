@@ -47,6 +47,9 @@
     ];
     environment.sessionVariables = {
       __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      __GL_SHADER_DISK_CACHE = "1";
+      __GL_SHADER_DISK_CACHE_SIZE = "10737418240";
+      RADV_PERFTEST = "aco";
     };
 
     services.xserver.videoDrivers = ["nvidia"];

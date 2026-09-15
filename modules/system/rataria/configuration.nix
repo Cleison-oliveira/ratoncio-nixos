@@ -17,7 +17,6 @@
         desktop-ollama
         gaming-steam
         gaming-gamemode
-        desktop-xdg
         desktop-comfyui
 
         hardware-nvidia
@@ -31,6 +30,7 @@
         services-appimage
         services-flatpak
         services-docker
+        services-tailscale
 
         #services-clamav
         #services-waydroid
