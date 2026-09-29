@@ -24,10 +24,7 @@
     };
 
     nixpkgs.config.allowUnfree = true;
-    nixpkgs.config.permittedInsecurePackages = [
-      "dotnet-runtime-6.0.36"
-      "dotnet-sdk-6.0.428"
-    ];
+    nixpkgs.config.permittedInsecurePackages = [];
     system.stateVersion = "26.05";
 
     nix = {
@@ -37,6 +34,7 @@
           "nix-command"
           "flakes"
         ];
+        accept-flake-config = true;
         trusted-users = ["root" "@wheel"];
         allowed-users = ["@wheel"];
         auto-optimise-store = true;
@@ -44,25 +42,29 @@
         substituters = [
           "https://cache.nixos.org"
           "https://cache.nixos-cuda.org"
-          "https://cuda-maintainers.cachix.org"
+          "https://nix-community.cachix.org"
+          "https://nix-gaming.cachix.org"
+          "https://chaotic-nyx.cachix.org"
           "https://comfyui.cachix.org"
           "https://attic.xuyh0120.win/lantian"
           "https://xddxdd.cachix.org"
         ];
         trusted-public-keys = [
           "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-          "comfyui.cachix.org-1:33mf9VzoIjzVbp0zwj+fT51HG0y31ZTK3nzYZAX0rec="
           "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
-          "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+          "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
+          "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
+          "comfyui.cachix.org-1:33mf9VzoIjzVbp0zwj+fT51HG0y31ZTK3nzYZAX0rec="
           "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
-          "xddxdd.cachix.org-1:EkS3jKUuG1cg+SrgC1E0p00i4B+w0L7D7/G+wU2P2zI="
+          "xddxdd.cachix.org-1:ay1HJyNDYmlSwj5NXQG065C8LfoqqKaTNCyzeixGjf8="
         ];
       };
 
       gc = {
         automatic = true;
         dates = "weekly";
-        options = "--max-freed 1G --delete-older-than 7d";
+        options = "--delete-older-than 7d";
       };
     };
   };

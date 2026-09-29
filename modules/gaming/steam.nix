@@ -49,7 +49,9 @@
       };
       Service = {
         Type = "oneshot";
-        ExecStart = "${pkgs.findutils}/bin/find ${config.home.homeDirectory}/.local/share/applications/ -type f -name '*.desktop' -exec ${pkgs.gnugrep}/bin/grep -l 'Exec=steam steam://rungameid/' {} ; -delete";
+        ExecStart = "${pkgs.writeShellScript "steam-sweep" ''
+          ${pkgs.findutils}/bin/find "${config.home.homeDirectory}/.local/share/applications" -type f -name '*.desktop' -exec ${pkgs.gnugrep}/bin/grep -q 'Exec=steam steam://rungameid/' {} \; -delete
+        ''}";
       };
     };
   };

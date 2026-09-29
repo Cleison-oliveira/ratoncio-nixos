@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.desktop-yt-dlp = {
+  flake.modules.homeManager.desktop-yt-dlp = {pkgs, ...}: {
     programs.yt-dlp = {
       enable = true;
       settings = {
@@ -8,5 +8,8 @@
         output = "~/Videos/%(title)s.%(ext)s";
       };
     };
+    home.packages = [
+      pkgs.aria2
+    ];
   };
 }

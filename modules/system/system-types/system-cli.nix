@@ -3,6 +3,7 @@
     imports = with inputs.self.modules.nixos; [
       cli-bash
       cli-fish
+      cli-mcp
     ];
   };
 
@@ -13,6 +14,7 @@
       cli-htop
       cli-nixvim
       cli-programming
+      cli-mcp
     ];
   };
 }

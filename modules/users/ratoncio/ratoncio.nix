@@ -42,14 +42,6 @@
             vulkan-tools
           ];
 
-          qt = [
-            libsForQt5.qtstyleplugins
-            qt5.qtbase
-            qt5.qtwayland
-            qt6.qtbase
-            qt6.qtwayland
-          ];
-
           wine = [
             wineWow64Packages.stable
             winetricks
@@ -94,7 +86,6 @@
             archive
             ++ basic
             ++ hardware
-            ++ qt
             ++ wine
             ++ graphics
             ++ internet

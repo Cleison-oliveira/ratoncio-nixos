@@ -24,20 +24,13 @@
       ];
 
       packages =
-        (
-          map (appId: {
-            inherit appId;
-            origin = "flathub";
-          }) [
-            "io.keet.Keet"
-            "org.DolphinEmu.dolphin-emu"
-          ]
-        )
-        ++ [
-          {
-            appId = "net.davidotek.pupgui2";
-            origin = "flathub-beta";
-          }
+        map (appId: {
+          inherit appId;
+          origin = "flathub";
+        }) [
+          "io.keet.Keet"
+          "org.DolphinEmu.dolphin-emu"
+          "net.davidotek.pupgui2"
         ];
 
       update = {
